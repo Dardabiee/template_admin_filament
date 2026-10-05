@@ -1,35 +1,43 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Policies;
 
-use Illuminate\Foundation\Auth\User as AuthUser;
+use App\Models\User;
 use App\Models\Userlevel;
-use Illuminate\Auth\Access\HandlesAuthorization;
 
 class UserlevelPolicy
 {
-    use HandlesAuthorization;
-    
-    public function view(AuthUser $authUser, Userlevel $userlevel): bool
+    public function before(User $user, string $ability): ?bool
     {
-        return $authUser->can('View:Userlevel');
+        if ($user->hasRole('super_admin') || ($user->userLevel && strtolower($user->userLevel->level_name) === 'super admin')) {
+            return true;
+        }
+
+        return null;
     }
 
-    public function create(AuthUser $authUser, Userlevel $userlevel): bool
+    public function viewAny(User $user): bool
     {
-        return $authUser->can('Create:Userlevel');
+        return $user->can('View:Userlevel');
     }
 
-    public function update(AuthUser $authUser, Userlevel $userlevel): bool
+    public function view(User $user, Userlevel $userlevel): bool
     {
-        return $authUser->can('Update:Userlevel');
+        return $user->can('View:Userlevel');
     }
 
-    public function delete(AuthUser $authUser, Userlevel $userlevel): bool
+    public function create(User $user): bool
     {
-        return $authUser->can('Delete:Userlevel');
+        return $user->can('Create:Userlevel');
     }
 
+    public function update(User $user, Userlevel $userlevel): bool
+    {
+        return $user->can('Update:Userlevel');
+    }
+
+    public function delete(User $user, Userlevel $userlevel): bool
+    {
+        return $user->can('Delete:Userlevel');
+    }
 }

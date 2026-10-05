@@ -18,7 +18,12 @@ class ListMenus extends ListRecords
             ->label('Tambah Menu')
             ->modalHeading('Buat Menu Baru')
             ->modalWidth('3xl')
+            ->after(function ($livewire) {
+                    $livewire->js("window.location.reload()");
+            })
             ->form(fn ($form) => MenuForm::configure($form))
+            ->authorize('create')
+
         ];
     }
 }

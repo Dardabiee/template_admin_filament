@@ -2,31 +2,51 @@
 
 namespace App\Policies;
 
-use Illuminate\Foundation\Auth\User as AuthUser;
-use Illuminate\Auth\Access\HandlesAuthorization;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
 
 class UserPolicy
 {
-    use HandlesAuthorization;
     
-    public function view(AuthUser $authUser): bool
-    {
-        return $authUser->can('View:User');
+    private function getPermissionName(string $action, ?Model $model = null): string {
+        
+       // Jika model tersedia, ambil nama kelasnya (misal: "User")
+        // Jika tidak, kita bisa tebak dari nama policy-nya (UserPolicy -> User)
+        $modelName = $model ? class_basename($model) : str_replace('Policy', '', class_basename(static::class));
+        return "{$action}:{$modelName}";
     }
 
-    public function create(AuthUser $authUser): bool
+    public function before(User $user, string $ability): ?bool
     {
-        return $authUser->can('Create:User');
+        if ($user->hasRole('super_admin')) {
+            return true;
+        }
+
+        return null;
     }
 
-    public function update(AuthUser $authUser): bool
+    public function viewAny(User $user): bool
     {
-        return $authUser->can('Update:User');
+        return $user->can($this->getPermissionName('View'));
     }
 
-    public function delete(AuthUser $authUser): bool
+    public function view(User $user, Model $model): bool
     {
-        return $authUser->can('Delete:User');
+        return $user->can($this->getPermissionName('View', $model));
     }
 
+    public function create(User $user): bool
+    {
+        return $user->can($this->getPermissionName('Create'));
+    }
+
+    public function update(User $user, Model $model): bool
+    {
+        return $user->can($this->getPermissionName('Update', $model));
+    }
+
+    public function delete(User $user, Model $model): bool
+    {
+        return $user->can($this->getPermissionName('Delete', $model));
+    }
 }

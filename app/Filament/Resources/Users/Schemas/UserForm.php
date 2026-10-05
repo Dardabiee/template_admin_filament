@@ -19,8 +19,11 @@ class UserForm
                     ->label('Email address')
                     ->email()
                     ->required(),
-                Select::make('userlevel_id')
-                    ->relationship('userlevel', 'level_name')
+                Select::make('roles')
+                    ->relationship('roles', 'name')
+                    ->multiple()
+                    ->preload()
+                    ->searchable()
                     ->required(),
                 TextInput::make('password')
                     ->password()

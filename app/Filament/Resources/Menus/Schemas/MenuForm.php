@@ -29,7 +29,7 @@ class MenuForm
                                             ->required()
                                             ->maxLength(255),
 
-                                        TextInput::make('route')
+                                        TextInput::make('url')
                                             ->label('Route / URL')
                                             ->placeholder('admin.users.index atau /admin/users')
                                             ->required(),

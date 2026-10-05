@@ -18,8 +18,11 @@ class UserResource extends Resource
     protected static ?string $model = User::class;
 
      // Tambahkan baris ini untuk mematikan auto-discover sidebar dari Resource ini
+//     public static function shouldRegisterNavigation(): bool
+// {
+//     return static::canViewAny();
+// }
     protected static bool $shouldRegisterNavigation = false;
-
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'Users';

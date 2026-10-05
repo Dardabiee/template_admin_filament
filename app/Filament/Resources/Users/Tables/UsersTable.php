@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
+
 class UsersTable
 {
     public static function configure(Table $table): Table
@@ -19,7 +20,7 @@ class UsersTable
                 TextColumn::make('email')
                     ->label('Email address')
                     ->searchable(),
-                TextColumn::make('userlevel.level_name')
+                TextColumn::make('roles.name')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -41,8 +42,11 @@ class UsersTable
                 ->iconButton()
                 ->modalHeading('Edit User')
                 ->modalWidth('3xl')
+                ->authorize('update')
                 ->form(fn ($form) => UserForm::configure($form)),
-                DeleteAction::make()->iconButton(),
+                DeleteAction::make()
+                ->iconButton()
+                ->authorize('delete')
             ]);
     }
 }

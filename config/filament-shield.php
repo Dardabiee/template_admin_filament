@@ -27,7 +27,7 @@ return [
             'pages' => true,
             'widgets' => true,
             'resources' => true,
-            'custom_permissions' => false,
+            'custom_permissions' => true,
         ],
     ],
 
@@ -120,7 +120,7 @@ return [
         'separator' => ':',
         'case' => 'pascal',
         'generate' => true,
-        'format_custom_permission_keys' => true,
+        'format_custom_permission_keys' => false,
     ],
 
     /*
@@ -143,10 +143,10 @@ return [
         'merge' => true,
         'generate' => true,
         'methods' => [
-         'view', 'create', 'update', 'delete',
+         'viewAny', 'view', 'create', 'update', 'delete',
         ],
         'single_parameter_methods' => [
-          
+          'viewAny', 'create',
         ],
     ],
 

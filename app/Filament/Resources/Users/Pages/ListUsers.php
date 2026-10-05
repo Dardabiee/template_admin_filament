@@ -18,6 +18,7 @@ class ListUsers extends ListRecords
             ->label('Tambah User')
             ->modalHeading('Buat User Baru')
             ->modalWidth('2xl')
+            ->authorize('create')
             ->form(fn ($form) => UserForm::configure($form))
         ];
     }

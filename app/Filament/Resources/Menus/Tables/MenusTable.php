@@ -23,6 +23,7 @@ class MenusTable
                     ->label('#')
                     ->sortable()
                     ->width('60px'),
+                
 
                 TextColumn::make('title')
                     ->label('Nama Menu')
@@ -33,7 +34,13 @@ class MenusTable
 
                 TextColumn::make('parent.title')
                     ->label('Parent Menu')
-                    ->placeholder('Main Menu')
+                    ->placeholder('Parent Menu')
+                    ->badge()
+                    ->color('gray'),
+
+                TextColumn::make('url')
+                    ->label('Url')
+                    ->placeholder('Url / Route')
                     ->badge()
                     ->color('gray'),
 
@@ -67,12 +74,17 @@ class MenusTable
                 ->form(fn ($form) => MenuForm::configure($form))
                 ->after(function ($livewire) {
                     $livewire->js("window.location.reload()");
-                }),
+                })
+                ->authorize('update')
+
+                ,
                 DeleteAction::make()
                 ->iconButton()
                 ->after(function ($livewire) {
                     $livewire->js("window.location.reload()");
-                }),
+                })
+                ->authorize('delete')
+
             ]);
     }
 }

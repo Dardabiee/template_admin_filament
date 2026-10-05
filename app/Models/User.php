@@ -15,7 +15,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        // 'userlevel_id',
+        'userlevel_id',
         'password',
     ];
 
@@ -32,21 +32,8 @@ class User extends Authenticatable
     }
 
     // Relasi balik ke UserLevel
-    public function userLevel(): BelongsTo
-    {
-        return $this->belongsTo(UserLevel::class, 'userlevel_id');
-    }
-
-    /**
-     * Cek apakah User memiliki permission tertentu (contoh: 'userlevel.create')
-     */
-    public function hasPermission(string $permissionName): bool
-    {
-        // 1. Jika Super Admin, berikan akses penuh tanpa cek DB
-        if($this->hasRole('super_admin') || ($this->userLevel && strtolower ($this->userLevel->level_name)  === "Super Admin" )) {
-            return true;
-        }
-
-        return $this->hasPermission($permissionName);
-    }
+    // public function userLevel(): BelongsTo
+    // {
+    //     return $this->belongsTo(UserLevel::class, 'userlevel_id');
+    // }
 }
