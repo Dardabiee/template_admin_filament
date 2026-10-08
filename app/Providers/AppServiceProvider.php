@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Gate::before(function (User $user, string $ability) {
-        return $user->hasRole('super_admin') ? true : null ;
+        return $user->hasRole('Super Admin') ? true : null ;
             
         });
         Menu::observe(MenuObserver::class);

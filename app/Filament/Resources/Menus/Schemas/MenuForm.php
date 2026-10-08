@@ -15,7 +15,7 @@ class MenuForm
     {
         return $schema
             ->components([
-                Grid::make(2)
+                Grid::make(1)
                     ->schema([
                         // Kolom Kiri/Utama (2/3 Lebar Screen)
                         Grid::make(1)
@@ -37,18 +37,11 @@ class MenuForm
                                         Select::make('parent_id')
                                             ->label('Parent Menu')
                                             ->relationship('parent', 'title')
+                                            ->preload()
                                             ->searchable()
                                             ->placeholder('Pilih jika ini ada di dalam sub-menu')
                                             ->nullable(),
-                                    ]),
-                            ]),
 
-                        // Kolom Kanan/Sidebar Form (1/3 Lebar Screen)
-                        Grid::make(1)
-                            ->columnSpan(2)
-                            ->schema([
-                                Section::make()
-                                    ->schema([
                                         TextInput::make('icon')
                                             ->label('Heroicon Class')
                                             ->placeholder('heroicon-o-users')
@@ -67,6 +60,16 @@ class MenuForm
                                             ->offColor('danger'),
                                     ]),
                             ]),
+
+                        // Kolom Kanan/Sidebar Form (1/3 Lebar Screen)
+                        // Grid::make(1)
+                        //     ->columnSpan(2)
+                        //     ->schema([
+                        //         Section::make()
+                        //             ->schema([
+                                        
+                        //             ]),
+                        //     ]),
                     ]),
             ]);
     }

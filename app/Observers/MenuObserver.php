@@ -26,6 +26,8 @@ class MenuObserver
             $this->deletePermissions($oldTitle);
             $this->createPermissions($menu->title);
         }
+
+        // app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
     }
 
     /**

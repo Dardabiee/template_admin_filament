@@ -3,11 +3,12 @@
 namespace App\Filament\Resources\Menus\Tables;
 
 use App\Filament\Resources\Menus\Schemas\MenuForm;
-use Filament\Actions\EditAction;
 use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
+use Filament\Tables\Enums\RecordActionsPosition;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -15,16 +16,15 @@ use Illuminate\Database\Eloquent\Builder;
 class MenusTable
 {
     public static function configure(Table $table): Table
-    {
+    {   
         return $table
             ->poll('10s')
             ->columns([
-                TextColumn::make('order')
-                    ->label('#')
-                    ->sortable()
-                    ->width('60px'),
-                
-
+                // TextColumn::make('id')
+                //     ->label('ID')
+                //     ->sortable()
+                //     ->width('60px')
+                //     ,
                 TextColumn::make('title')
                     ->label('Nama Menu')
                     ->searchable()
@@ -43,7 +43,10 @@ class MenusTable
                     ->placeholder('Url / Route')
                     ->badge()
                     ->color('gray'),
-
+                TextColumn::make('order')
+                    ->label('Order')
+                    ->sortable()
+                    ->width('60px'),
                 IconColumn::make('icon')
                     ->label('Icon')
                     ->icon(fn (string $state): string => $state ?: 'heroicon-o-minus'),
@@ -75,9 +78,7 @@ class MenusTable
                 ->after(function ($livewire) {
                     $livewire->js("window.location.reload()");
                 })
-                ->authorize('update')
-
-                ,
+                ->authorize('update'),
                 DeleteAction::make()
                 ->iconButton()
                 ->after(function ($livewire) {
@@ -85,6 +86,6 @@ class MenusTable
                 })
                 ->authorize('delete')
 
-            ]);
+            ],position: RecordActionsPosition::BeforeCells);
     }
 }

@@ -17,7 +17,7 @@ class MenuResource extends Resource
     protected static ?string $model = Menu::class;
 
      // Tambahkan baris ini untuk mematikan auto-discover sidebar dari Resource ini
- protected static bool $shouldRegisterNavigation = false;
+     protected static bool $shouldRegisterNavigation = false;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

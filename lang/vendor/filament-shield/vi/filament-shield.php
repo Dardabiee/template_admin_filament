@@ -33,7 +33,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'nav.group' => 'Filament Shield',
+    'nav.group' => 'Filament Shield ',
     'nav.role.label' => 'Vai trò',
     'nav.role.icon' => 'heroicon-o-shield-check',
     'resource.label.role' => 'Vai trò',

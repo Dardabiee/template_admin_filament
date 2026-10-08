@@ -2,30 +2,36 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Auth\Login;
+use App\Filament\Pages\CustomDashboard;
 use App\Models\Menu;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
+use Filament\Actions\Action;
+use Filament\Enums\GlobalSearchPosition;
+use Filament\Enums\UserMenuPosition;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationItem;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\Support\Assets\Css;
 use Filament\Support\Colors\Color;
+use Filament\View\PanelsRenderHook;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Session\Middleware\StartSession;
-use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
-use Filament\Navigation\NavigationItem;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
-use Filament\Support\Assets\Css;
-use Filament\Enums\UserMenuPosition;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -35,29 +41,51 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->viteTheme('resources/css/filament/admin/theme.css')
+            ->renderHook(
+                PanelsRenderHook::BODY_END,
+                fn () => Blade::render('<livewire:change-password-modal />'),
+            )
             // Aktifkan baris ini jika ingin menggunakan menu dari database:
             ->navigationItems(self::getDynamicNavigationItems())
-            ->login()
+            ->login(Login::class)
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => '#2c7af7',
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-                Dashboard::class,
+                CustomDashboard::class,
             ])
-            ->assets([
-                Css::make('custom-stylesheet', asset('css/filament/custom.css')) 
+           ->assets([
+                Css::make('custom-stylesheet',  asset('css/filament/custom.css')) 
             ])
             ->brandLogo(asset('images/logo-holding Background Removed.png'))
             ->brandLogoHeight('5rem')
+            ->favicon(asset('images/logo-holding Background Removed.png'))
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                AccountWidget::class,
-                FilamentInfoWidget::class,
+                // AccountWidget::class,
+                // FilamentInfoWidget::class,
+               
             ])
+            ->globalSearch(false)
             ->sidebarFullyCollapsibleOnDesktop()
-            ->userMenu(position: UserMenuPosition::Sidebar)
+            ->userMenuItems([
+                [
+                Action::make('Change Password')
+                    ->label('Change Password')
+                    ->icon('heroicon-o-lock-closed')
+                    ->url('#')
+                    ->extraAttributes([
+                        'x-on:click.prevent' => "\$dispatch('open-modal', { id: 'change-password-modal' })",
+                    ]),
+                ]  
+             ]                 
+            )
+            ->userMenu(
+                position: UserMenuPosition::Sidebar
+            )
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

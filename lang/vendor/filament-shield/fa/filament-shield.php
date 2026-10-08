@@ -33,7 +33,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'nav.group' => 'Filament Shield',
+    'nav.group' => 'Filament Shield ',
     'nav.role.label' => 'نقش‌ها',
     'nav.role.icon' => 'heroicon-o-shield-check',
     'resource.label.role' => 'نقش',
