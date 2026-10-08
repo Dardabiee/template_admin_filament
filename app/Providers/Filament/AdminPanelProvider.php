@@ -32,6 +32,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+// use Filament\Enums\GlobalSearchPosition;
+// use App\Filament\Pages\CustomDashboard;
+// use App\Filament\Pages\Auth\Login;
 
 class AdminPanelProvider extends PanelProvider
 {
