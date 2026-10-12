@@ -35,7 +35,7 @@
             <thead>
                 <tr class="bg-gray-100 dark:bg-gray-800">
                     <th class="border border-gray-300 dark:border-gray-700 p-2 font-semibold" colspan="2">JUMLAH PREPAYMENT</th>
-                    <th class="border border-gray-300 dark:border-gray-700 p-2 text-center font-semibold" colspan="3">Rp. {{ number_format($record->jumlah_prepayment, 0, ',', '.') }}</th>
+                    <th class="border border-gray-300 dark:border-gray-700 p-2 text-let font-semibold" colspan="3">Rp. {{ number_format($record->jumlah_prepayment, 0, ',', '.') }}</th>
                     <th class="border border-gray-300 dark:border-gray-700 p-2 text-right font-semibold ">BUKTI PENGELUARAN</th>
                 </tr>
                 <tr class="bg-gray-50 dark:bg-gray-800/50">

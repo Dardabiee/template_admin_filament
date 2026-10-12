@@ -12,6 +12,8 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Enums\RecordActionsPosition;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 
 class KpsReimbustsTable
 {   
@@ -19,7 +21,32 @@ class KpsReimbustsTable
 
     public static function configure(Table $table): Table
     {
+        $user = Auth::user();
+        $userName = $user->name;
+        $userRole = $user->getRoleNames()->first();
         return $table
+            ->modifyQueryUsing(function (Builder $query) use ($userRole, $userName) {
+                if ($userName === 'eko' || $userRole === 'Super Admin') {
+                return; 
+                }
+
+                if ($userName === 'Finance') {
+                    $query->where(function ($q) use ($userName) {
+                    // Muncul jika status masih waiting/on-process di level 1, atau dia sendiri yang mengajukan
+                    $q->where('app_status', 'waiting')
+                      ->orWhere('app_name', $userName);
+                });
+                } elseif ($userRole === 'Manager' || $userRole === 'Direksi') {
+                $query->where(function ($q) use ($userName) {
+                    // Manager/Direksi HANYA BISA MELIHAT jika Finance sudah approve (app_status = approved)
+                    $q->where('app_status', 'approved')
+                      ->where(function ($sub) use ($userName) {
+                          $sub->where('app2_status', 'waiting')
+                              ->orWhere('app2_name', $userName);
+                      });
+                });
+              }
+            }) 
             ->columns([
                 TextColumn::make('kode_reimbust')
                     ->searchable(),
