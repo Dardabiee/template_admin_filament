@@ -2,9 +2,9 @@
     <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow border border-gray-200 dark:border-gray-800 text-sm">
         
         <!-- HEADER / KOP -->
-        <div class="flex justify-between items-center border-b pb-4 mb-6">
+        <div class="flex justify-between items-center pb-4 mb-6">
             <div class="flex items-center gap-3">
-                <img src="{{ asset('images/logo-kps.png') }}" alt="Logo" class="h-15 object-contain">
+                <img src="{{ asset('assets/img/sub-bisnis/kps/logo.png') }}" alt="Logo" class="h-15 object-contain">
             </div>
             <div class="text-right">
                 <span class="text-xs text-gray-500 font-semibold uppercase">Kode Deklarasi</span>

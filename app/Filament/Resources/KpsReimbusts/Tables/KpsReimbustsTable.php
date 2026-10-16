@@ -4,6 +4,7 @@ namespace App\Filament\Resources\KpsReimbusts\Tables;
 
 use App\Filament\Resources\KpsReimbusts\Pages\ViewKpsReimbust;
 use APP\Models\KpsReimbust;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -30,31 +31,39 @@ class KpsReimbustsTable
                 return; 
                 }
 
-                if ($userName === 'Finance') {
+                if ($userRole === 'Finance') {
                     $query->where(function ($q) use ($userName) {
                     // Muncul jika status masih waiting/on-process di level 1, atau dia sendiri yang mengajukan
-                    $q->where('app_status', 'waiting')
-                      ->orWhere('app_name', $userName);
-                });
+                    $q->where('app_name', $userName)
+                    ->where(function ($sub) {
+                        $sub->where('app_status', 'waiting')
+                            ->orWhere(function ($ready) {
+                                $ready->where('app_status', 'approved')
+                                    ->where('app2_status', 'approved')
+                                    ->where('payment_status', 'unpaid');
+                            });
+                    });
+                }); 
                 } elseif ($userRole === 'Manager' || $userRole === 'Direksi') {
                 $query->where(function ($q) use ($userName) {
                     // Manager/Direksi HANYA BISA MELIHAT jika Finance sudah approve (app_status = approved)
                     $q->where('app_status', 'approved')
-                      ->where(function ($sub) use ($userName) {
-                          $sub->where('app2_status', 'waiting')
-                              ->orWhere('app2_name', $userName);
-                      });
+                      ->where('app2_name', $userName)
+                      ->where('app2_status', 'waiting');
+                    //   ->where(function ($sub) use ($userName) {
+                    //       $sub;
+                    //   });
                 });
               }
             }) 
+            ->defaultSort('created_at', 'desc')
             ->columns([
                 TextColumn::make('kode_reimbust')
-                    ->searchable(),
+                    ->searchable()
+                    ->formatStateUsing(fn ($state) => strtoupper($state))
+                    ,
                 // TextColumn::make('kode_prepayment')
                 //     ->searchable(),
-                TextColumn::make('user.fullname') // Mengambil nama dari relasi tbl_user/tbl_data_user
-                    ->label('Nama Pengaju')
-                    ->searchable(),
                 TextColumn::make('status')
                     ->searchable()
                     ->badge()
@@ -64,10 +73,13 @@ class KpsReimbustsTable
                         'approved' => 'success',
                         'rejected' => 'danger',
                     }),
-                TextColumn::make('jabatan')
+                TextColumn::make('user.fullname') // Mengambil nama dari relasi tbl_user/tbl_data_user
+                    ->label('Nama')
                     ->searchable(),
-                TextColumn::make('departemen')
-                    ->searchable(),
+                // TextColumn::make('jabatan')
+                //     ->searchable(),
+                // TextColumn::make('departemen')
+                //     ->searchable(),
                 TextColumn::make('sifat_pelaporan')
                     ->searchable(),
                 TextColumn::make('tgl_pengajuan')
@@ -76,17 +88,17 @@ class KpsReimbustsTable
                 TextColumn::make('jumlah_prepayment')
                     ->numeric()
                     ->sortable(),
-                // TextColumn::make('no_rek')
-                //     ->searchable(),
+                TextColumn::make('tujuan')
+                    ->searchable(),
                 TextColumn::make('payment_status')
                     ->searchable(),
-                TextColumn::make('tgl_pembayaran')
-                    ->dateTime()
-                    ->sortable(),
+                // TextColumn::make('tgl_pembayaran')
+                //     ->dateTime()
+                //     ->sortable(),
                 // TextColumn::make('attachment')
                 //     ->searchable(),
-                TextColumn::make('app_name')
-                    ->searchable(),
+                // TextColumn::make('app_name')
+                //     ->searchable(),
                 // TextColumn::make('app_status')
                 //     ->searchable(),
                 // TextColumn::make('app_date')
@@ -101,10 +113,10 @@ class KpsReimbustsTable
                 //     ->sortable(),
                 
                     
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                // TextColumn::make('created_at')
+                //     ->dateTime()
+                //     ->sortable()
+                    // ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 SelectFilter::make('status')
@@ -120,7 +132,17 @@ class KpsReimbustsTable
                 ViewAction::make()
                 ->iconButton()
                 ->url(fn ($record): string => ViewKpsReimbust::getUrl([$record->getKey()])),
-            ], position: RecordActionsPosition::BeforeCells)
+                
+                Action::make('bukti_bayar')
+                    ->icon('heroicon-o-document')
+                    ->iconButton()
+                    // ->label('Bukti Bayar')
+                    ->color('success')
+                    ->visible(fn ($record) => $record->payment_status === 'paid' && !empty($record->attachment))
+                    // Membuka file attachment di tab baru browser
+                    ->url(fn ($record) => asset('http://192.168.90.5/sw/assets/backend/document/reimbust/attachment/kps_attachment/' . $record->attachment )) // Sesuaikan path folder storage jika berbeda
+                    ->openUrlInNewTab(),
+            ], position: RecordActionsPosition::BeforeColumns)
             // ->toolbarActions([
             //     BulkActionGroup::make([
             //         DeleteBulkAction::make(),

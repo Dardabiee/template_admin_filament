@@ -10,6 +10,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Enums\RecordActionsPosition;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 
 class KpsDeklarasisTable
@@ -60,13 +61,21 @@ class KpsDeklarasisTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('status')
+                ->label('Select Filter')
+                ->options([
+                        'on-process' => 'On Process',
+                        'revised' => 'Revised',
+                        'approved' => 'Approved',
+                        'rejected' => 'Rejected',
+                    ]),
             ])
+            ->defaultSort('created_at', 'desc')
             ->Actions([
                 ViewAction::make()
                 ->iconButton()
                 ->url(fn ($record): string => ViewKpsDeklarasi::getUrl([$record->getKey()])),
-            ], position: RecordActionsPosition::AfterCells)
+            ], position: RecordActionsPosition::BeforeCells)
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

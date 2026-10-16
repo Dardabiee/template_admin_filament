@@ -5,6 +5,7 @@ namespace App\Filament\Resources\KpsDeklarasis;
 use App\Filament\Resources\KpsDeklarasis\Pages\CreateKpsDeklarasi;
 use App\Filament\Resources\KpsDeklarasis\Pages\EditKpsDeklarasi;
 use App\Filament\Resources\KpsDeklarasis\Pages\ListKpsDeklarasis;
+use App\Filament\Resources\KpsDeklarasis\Pages\ViewKpsDeklarasi;
 use App\Filament\Resources\KpsDeklarasis\Schemas\KpsDeklarasiForm;
 use App\Filament\Resources\KpsDeklarasis\Tables\KpsDeklarasisTable;
 use App\Models\KpsDeklarasi;
@@ -48,6 +49,7 @@ class KpsDeklarasiResource extends Resource
             'index' => ListKpsDeklarasis::route('/'),
             'create' => CreateKpsDeklarasi::route('/create'),
             'edit' => EditKpsDeklarasi::route('/{record}/edit'),
+            'view' => ViewKpsDeklarasi::route('/{record}')
         ];
     }
 }
