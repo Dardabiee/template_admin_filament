@@ -137,7 +137,7 @@ class PuReimbustsTable
                     ->color('success')
                     ->visible(fn ($record) => $record->payment_status === 'paid' && !empty($record->attachment))
                     // Membuka file attachment di tab baru browser
-                    ->url(fn ($record) => asset('http://192.168.90.5/sw/assets/backend/document/reimbust/attachment/pu_attachment/' . $record->attachment )) // Sesuaikan path folder storage jika berbeda
+                    ->url(fn ($record) => 'https://kolaborasigroup.com/sw/assets/backend/document/reimbust/attachment/pu_attachment/' . $record->attachment ) // Sesuaikan path folder storage jika berbeda
                     ->openUrlInNewTab(),
             ], position: RecordActionsPosition::BeforeColumns);
     }

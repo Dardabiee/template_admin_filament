@@ -20,6 +20,13 @@ class KpsKaryawanResource extends Resource
 {
     protected static ?string $model = KpsKaryawan::class;
 
+    // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
+    protected static ?string $navigationLabel = 'KPS Karyawan';
+    protected static ?string $modelLabel = 'KPS Karyawan';
+
+    // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
+    protected static ?string $pluralModelLabel = 'KPS Karyawan';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static bool $shouldRegisterNavigation = false;

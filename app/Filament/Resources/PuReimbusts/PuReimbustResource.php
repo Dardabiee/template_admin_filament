@@ -19,6 +19,13 @@ class PuReimbustResource extends Resource
 {
     protected static ?string $model = PuReimbust::class;
 
+    // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
+    protected static ?string $navigationLabel = 'PU Reimbust';
+    protected static ?string $modelLabel = 'PU Reimbust';
+
+    // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
+    protected static ?string $pluralModelLabel = 'PU Reimbust';
+
     // Tambahkan baris ini untuk mematikan auto-discover sidebar dari Resource ini
     protected static bool $shouldRegisterNavigation = false;
 

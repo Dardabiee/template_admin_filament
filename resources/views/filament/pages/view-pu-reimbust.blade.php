@@ -12,7 +12,7 @@
             </div>
             <div class="text-center">
                 <h1 class="text-lg font-bold uppercase tracking-wider text-gray-900 dark:text-white">FORM PELAPORAN / REIMBURSE</h1>
-                <h2 class="text-md font-semibold text-gray-600 dark:text-gray-400">KPS</h2>
+                <h2 class="text-md font-semibold text-gray-600 dark:text-gray-400">pengenumroh</h2>
             </div>
             <div></div> <!-- Spacer -->
         </div>
@@ -54,7 +54,7 @@
                     <td class="text-center border border-gray-300 dark:border-gray-700 p-2">{{ number_format($detail->jumlah, 0, ',', '.') }}</td>
                     <td class="border border-gray-300 dark:border-gray-700 p-2 text-center">
                         @if($detail->kwitansi)
-                            <a href="{{ asset('http://192.168.90.5/sw/pu_reimbust/read_form/' . $detail->kwitansi) }}" target="_blank" class="px-3 py-1 bg-blue-600 text-white rounded text-xs">Lihat Foto</a>
+                            <a href="https://kolaborasigroup.com/sw/assets/backend/document/reimbust/kwitansi/kwitansi_pu/{{ $detail->kwitansi }}" target="_blank" class="px-3 py-1 bg-blue-600 text-white rounded text-xs">Lihat Foto</a>
                         @else
                             -
                         @endif

@@ -18,8 +18,16 @@ use Filament\Tables\Table;
 class KpsPrepaymentResource extends Resource
 {
     protected static ?string $model = KpsPrepayment::class;
-// Tambahkan baris ini untuk mematikan auto-discover sidebar dari Resource ini
-     protected static bool $shouldRegisterNavigation = false;
+
+    // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
+    protected static ?string $navigationLabel = 'KPS Prepayment';
+    protected static ?string $modelLabel = 'KPS Prepayment';
+
+    // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
+    protected static ?string $pluralModelLabel = 'KPS Prepayment';
+
+    // Tambahkan baris ini untuk mematikan auto-discover sidebar dari Resource ini
+    protected static bool $shouldRegisterNavigation = false;
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'KpsPrepayment';

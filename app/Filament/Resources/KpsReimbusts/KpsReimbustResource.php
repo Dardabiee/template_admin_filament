@@ -18,6 +18,15 @@ use Filament\Tables\Table;
 class KpsReimbustResource extends Resource
 {
     protected static ?string $model = KpsReimbust::class;
+
+    // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
+    protected static ?string $navigationLabel = 'KPS Reimbust';
+    protected static ?string $modelLabel = 'KPS Reimbust';
+
+    // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
+    protected static ?string $pluralModelLabel = 'KPS Reimbust';
+
+
     // Tambahkan baris ini untuk mematikan auto-discover sidebar dari Resource ini
     protected static bool $shouldRegisterNavigation = false;
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

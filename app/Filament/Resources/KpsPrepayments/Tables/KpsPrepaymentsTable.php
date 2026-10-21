@@ -137,7 +137,7 @@ class KpsPrepaymentsTable
                     ->iconButton()
                     ->color('success')
                     ->visible(fn ($record) => $record->payment_status === 'paid' && !empty($record->attachment))
-                    ->url(fn ($record) => asset('http://192.168.90.5/sw/assets/backend/document/prepayment/attachment/kps_attachment/' . $record->attachment ))
+                    ->url(fn ($record) => 'https://kolaborasigroup.com/sw/assets/backend/document/prepayment/attachment/kps_attachment/' . $record->attachment )
                     ->openUrlInNewTab(),    
             ], position: RecordActionsPosition::BeforeColumns)
             ->toolbarActions([

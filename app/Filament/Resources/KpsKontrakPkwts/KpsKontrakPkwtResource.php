@@ -20,6 +20,13 @@ class KpsKontrakPkwtResource extends Resource
 {
     protected static ?string $model = KpsKontrakPkwt::class;
 
+    // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
+    protected static ?string $navigationLabel = 'KPS Kontrak PKWT';
+    protected static ?string $modelLabel = 'KPS Kontrak PKWT';
+
+    // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
+    protected static ?string $pluralModelLabel = 'KPS Kontrak PKWT';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static bool $shouldRegisterNavigation = false;
