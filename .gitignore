@@ -14,12 +14,14 @@
 /.zed
 /auth.json
 /node_modules
-/public/build
-/public/css/filament
+# /public/build
+# /public/css/filament
 /public/fonts-manifest.dev.json
 /public/fonts/filament
 /public/hot
-/public/js/filament
+# /public/js/filament
+/bootstrap/cache/*.php
+!/bootstrap/cache/.gitignore
 /public/storage
 /storage/*.key
 /storage/pail

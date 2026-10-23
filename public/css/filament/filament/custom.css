@@ -1,0 +1,24 @@
+/* public/css/filament/custom.css */
+
+/* Target logo container dan gambarnya secara spesifik */
+.fi-logo img,
+.fi-logo svg,
+a.fi-logo > img {
+    height: 5rem !important;
+    max-height: 5rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* public/css/filament-custom.css */
+
+/* 1. Ubah Warna Background Sidebar */
+aside.fi-sidebar {
+    background-color: #e4e4e4 !important; /* Contoh: Dark Navy */
+
+}
+
+/* 2. Ubah Warna Teks & Icon Menu Sidebar (State Normal) */
+.fi-sidebar {
+    @apply bg-gray-50 dark:bg-gray-950 !important;
+}
