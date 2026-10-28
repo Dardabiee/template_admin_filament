@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\KpsPrepayments;
 
 
+use App\Filament\Resources\KpsPrepayments\Pages\CreateKpsPrepayment;
 use App\Filament\Resources\KpsPrepayments\Pages\EditKpsPrepayment;
 use App\Filament\Resources\KpsPrepayments\Pages\ListKpsPrepayments;
 use App\Filament\Resources\KpsPrepayments\Pages\ViewKpsPrepayment;
@@ -53,7 +54,7 @@ class KpsPrepaymentResource extends Resource
     {
         return [
             'index' => ListKpsPrepayments::route('/'),
-            // 'create' => CreateKpsPrepayment::route('/create'),
+            'create' => CreateKpsPrepayment::route('/create'),
             'edit' => EditKpsPrepayment::route('/{record}/edit'),
             'view' => ViewKpsPrepayment::route('/{record}')
         ];

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PuReimbustDetail extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'pu_reimbust_detail';
     protected $primaryKey = 'id';
 

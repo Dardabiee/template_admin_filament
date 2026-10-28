@@ -5,6 +5,8 @@ namespace App\Filament\Resources\KpsPrepayments\Tables;
 use App\Models\KpsPrepayment;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\CreateAction;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
@@ -132,12 +134,14 @@ class KpsPrepaymentsTable
             ->actions([
                 ViewAction::make()
                 ->iconButton(),
+                // DeleteAction::make()
+                // ->iconButton(),
                 Action::make('bukti bayar')
                     ->icon('heroicon-o-document')
                     ->iconButton()
                     ->color('success')
                     ->visible(fn ($record) => $record->payment_status === 'paid' && !empty($record->attachment))
-                    ->url(fn ($record) => 'https://kolaborasigroup.com/sw/assets/backend/document/prepayment/attachment/kps_attachment/' . $record->attachment )
+                    ->url(fn ($record) => asset('/assets/img/documents/prepayments/kps/' . $record->attachment))
                     ->openUrlInNewTab(),    
             ], position: RecordActionsPosition::BeforeColumns)
             ->toolbarActions([

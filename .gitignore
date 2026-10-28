@@ -20,8 +20,6 @@
 /public/fonts/filament
 /public/hot
 # /public/js/filament
-/bootstrap/cache/*.php
-!/bootstrap/cache/.gitignore
 /public/storage
 /storage/*.key
 /storage/pail

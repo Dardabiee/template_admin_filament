@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class KpsKaryawan extends Model
 {
     //
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'kps_karyawan';
     protected $primaryKey = 'id';
 
