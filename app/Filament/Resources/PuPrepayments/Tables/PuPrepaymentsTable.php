@@ -137,7 +137,7 @@ class PuPrepaymentsTable
                     ->iconButton()
                     ->color('success')
                     ->visible(fn ($record) => $record->payment_status === 'paid' && !empty($record->attachment))
-                    ->url(fn ($record) => 'https://kolaborasigroup.com/sw/assets/backend/document/prepayment/attachment/pu_attachment/' . $record->attachment )
+                    ->url(fn ($record) => asset('/assets/img/documents/prepayments/pu/' . $record->attachment ))
                     ->openUrlInNewTab(),    
             ], position: RecordActionsPosition::BeforeColumns)
             ->toolbarActions([

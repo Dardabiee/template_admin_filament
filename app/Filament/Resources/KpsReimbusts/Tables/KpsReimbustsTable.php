@@ -140,7 +140,7 @@ class KpsReimbustsTable
                     ->color('success')
                     ->visible(fn ($record) => $record->payment_status === 'paid' && !empty($record->attachment))
                     // Membuka file attachment di tab baru browser
-                    ->url(fn ($record) => 'https://kolaborasigroup.com/sw/assets/backend/document/reimbust/attachment/kps_attachment/' . $record->attachment ) // Sesuaikan path folder storage jika berbeda
+                    ->url(fn ($record) => asset('/assets/img/documents/reimbust/kps/' . $record->attachment )) // Sesuaikan path folder storage jika berbeda
                     ->openUrlInNewTab(),
             ], position: RecordActionsPosition::BeforeColumns)
             // ->toolbarActions([

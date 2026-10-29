@@ -9,20 +9,15 @@ class PuDeklarasi extends Model
 {
     //
     //protected $connection = 'sw';
-    protected $table = 'pu_reimbust_detail';
+    protected $table = 'pu_deklarasi';
     protected $primaryKey = 'id';
     public $timestamps = false;
 
     protected $guarded = [];
 
-    public function reimbust(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(PuReimbust::class, 'reimbust_id', 'id');
-    }
-
-    public function deklarasiRecord(): BelongsTo
-    {
-        return $this->belongsTo(PuDeklarasi::class, 'deklarasi', 'kode_deklarasi');
+        return $this->belongsTo(SwUser::class, 'id_pengaju', 'id_user');
     }
 }
 

@@ -54,7 +54,7 @@
                     <td class="text-center border border-gray-300 dark:border-gray-700 p-2">{{ number_format($detail->jumlah, 0, ',', '.') }}</td>
                     <td class="border border-gray-300 dark:border-gray-700 p-2 text-center">
                         @if($detail->kwitansi)
-                            <a href="https://kolaborasigroup.com/sw/assets/backend/document/reimbust/kwitansi/kwitansi_pu/{{ $detail->kwitansi }}" target="_blank" class="px-3 py-1 bg-blue-600 text-white rounded text-xs">Lihat Foto</a>
+                            <a href="{{ asset('/assets/img/documents/reimbust/pu/' . $detail->kwitansi) }}" target="_blank" class="px-3 py-1 bg-blue-600 text-white rounded text-xs">Lihat Foto</a>
                         @else
                             -
                         @endif

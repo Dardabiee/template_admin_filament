@@ -26,6 +26,11 @@ class PuPrepayment extends Model
         return $this->belongsTo(SwUser::class, 'id_user', 'id_user');
     }
 
+    public function reimbusts(): HasMany {
+        return $this->hasMany(PuReimbust::class, 'kode_prepayment', 'kode_prepayment');
+    }
+
+    
     public static function generateKodePrepayment($date)
     {
         $formattedDate = Carbon::parse($date)->format('ym'); // Format YYMM
