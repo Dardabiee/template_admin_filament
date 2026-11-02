@@ -115,6 +115,7 @@ class PuReimbustsTable
                 // TextColumn::make('attachment')
                 //     ->searchable(),
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                  SelectFilter::make('status')
                     ->label('Filter Status')

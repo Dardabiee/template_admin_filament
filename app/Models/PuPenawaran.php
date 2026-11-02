@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Carbon\Carbon;
 
 class PuPenawaran extends Model
-{
+{   
+    //protected &connection = 'sw';
     protected $table = 'pu_penawaran'; // Nama tabel database[cite: 9]
     protected $primaryKey = 'id';
     public $timestamps = false; // Ubah ke true jika tabel memiliki kolom created_at & updated_at otomatis
