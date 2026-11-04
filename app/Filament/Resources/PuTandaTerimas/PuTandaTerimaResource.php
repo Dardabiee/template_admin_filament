@@ -19,7 +19,7 @@ class PuTandaTerimaResource extends Resource
     protected static ?string $model = PuTandaTerima::class;
 
     protected static ?string $navigationLabel = 'Table Tanda Terima';
-    protected static ?string $modelLabel = 'Tanda Terima';
+    protected static ?string $modelLabel = 'View Tanda Terima';
 
      // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Tanda Terima';

@@ -53,12 +53,12 @@ class PuRekapitulasi extends Page implements HasTable, HasForms
                     DatePicker::make('tgl_awal')
                         ->label('Tanggal Awal')
                         ->native(false)
-                        ->displayFormat('d-m-Y')
+                        ->displayFormat('d M Y')
                         ->requiredWith('tgl_akhir'),
                     DatePicker::make('tgl_akhir')
                         ->label('Tanggal Akhir')
                         ->native(false)
-                        ->displayFormat('d-m-Y')
+                        ->displayFormat('d M Y')
                         ->requiredWith('tgl_awal')
                         ->afterOrEqual('tgl_awal'),
                 ]),

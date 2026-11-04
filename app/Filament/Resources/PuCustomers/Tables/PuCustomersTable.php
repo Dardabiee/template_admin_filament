@@ -27,7 +27,7 @@ class PuCustomersTable
                     ->searchable(),
                 TextColumn::make('transaksi.tgl_keberangkatan')
                     ->label('Tanggal Keberangkatan')
-                    ->date('d-m-Y'),
+                    ->date('d M Y'),
                 TextColumn::make('transaksi.produk')
                     ->label('Produk')
                     ->searchable(),

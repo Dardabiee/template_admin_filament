@@ -18,7 +18,7 @@ class PuAgenResource extends Resource
 {
     protected static ?string $model = PuAgen::class;
     protected static ?string $navigationLabel = 'Data Agen';
-    protected static ?string $modelLabel = 'Data Agen';
+    protected static ?string $modelLabel = 'View Data Agen';
      // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Data Agen';
     protected static bool $shouldRegisterNavigation = false;

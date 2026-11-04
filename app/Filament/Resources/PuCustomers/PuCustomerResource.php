@@ -19,7 +19,7 @@ class PuCustomerResource extends Resource
     protected static ?string $model = PuCustomer::class;
 
     protected static ?string $navigationLabel = 'Customer PU';
-    protected static ?string $modelLabel = 'Customer PU';
+    protected static ?string $modelLabel = 'View Customer';
     protected static ?string $pluralModelLabel = 'Customer';
     protected static bool $shouldRegisterNavigation = false;
 

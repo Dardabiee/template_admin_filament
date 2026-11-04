@@ -52,7 +52,7 @@ class PuInvoicesTable
                 ]),
            TextColumn::make('pu_order_createdAt')
                 ->label('Tanggal')
-                ->dateTime('d-m-Y'),
+                ->dateTime('d M Y'),
         ])
         // Opsional: Agar saat baris tabel diklik, langsung membuka modal detail
         ->actions([
@@ -82,7 +82,7 @@ class PuInvoicesTable
                                 ->label('')
                                 ->schema([
                                     TextEntry::make('kode_invoice')->label('Kode Invoice'),
-                                    TextEntry::make('tgl_invoice')->label('Tanggal Invoice')->date('d-m-Y'),
+                                    TextEntry::make('tgl_invoice')->label('Tanggal Invoice')->date('d M Y'),
                                     TextEntry::make('total_tagihan')->label('Tagihan')->money('IDR', true),
                                     TextEntry::make('keterangan')->label('Keterangan'),
                                 ])->columns(2)

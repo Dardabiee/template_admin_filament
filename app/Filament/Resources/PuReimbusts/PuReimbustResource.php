@@ -21,7 +21,7 @@ class PuReimbustResource extends Resource
 
     // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
     protected static ?string $navigationLabel = 'PU Reimbust';
-    protected static ?string $modelLabel = 'Reimbust PU ';
+    protected static ?string $modelLabel = 'View Reimbust PU ';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Table Reimbust PU';

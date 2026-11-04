@@ -22,7 +22,7 @@ class KpsPrepaymentResource extends Resource
 
     // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
     protected static ?string $navigationLabel = 'KPS Prepayment';
-    protected static ?string $modelLabel = 'Prepayment KPS';
+    protected static ?string $modelLabel = 'View Prepayment';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Table Prepayment KPS';

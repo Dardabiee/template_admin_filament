@@ -19,7 +19,7 @@ class PuLandArrangementResource extends Resource
     protected static ?string $model = PuLandArrangement::class;
 
     protected static ?string $navigationLabel = 'Penawaran LA';
-    protected static ?string $modelLabel = 'Penawaran LA';
+    protected static ?string $modelLabel = 'View Penawaran LA';
      // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Penawaran LA';
     protected static bool $shouldRegisterNavigation = false;

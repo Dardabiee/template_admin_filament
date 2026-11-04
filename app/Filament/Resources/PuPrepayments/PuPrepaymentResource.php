@@ -21,7 +21,7 @@ class PuPrepaymentResource extends Resource
 
     // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
     protected static ?string $navigationLabel = 'PU Prepayment';
-    protected static ?string $modelLabel = 'Prepayment PU';
+    protected static ?string $modelLabel = 'Prepayment';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Table Prepayment PU ';
