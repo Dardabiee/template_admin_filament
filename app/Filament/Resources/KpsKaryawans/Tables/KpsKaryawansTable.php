@@ -124,7 +124,10 @@ class KpsKaryawansTable
             ])
             ->recordActions([
                 ViewAction::make()->iconButton(),
-                EditAction::make()->iconButton(),
+                EditAction::make()
+                ->iconButton()
+                ->visible(fn () => auth()->user()?->hasAnyRole(['Super Admin', 'Admin', 'Finance', 'Direksi']))
+                ,
             ],position: RecordActionsPosition::BeforeCells)
              
             ->toolbarActions([

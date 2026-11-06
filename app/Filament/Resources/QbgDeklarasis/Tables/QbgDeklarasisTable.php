@@ -70,7 +70,7 @@ class QbgDeklarasisTable
             ])
             ->actions([
                 // EditAction::make()
-                // ->iconButton(),
+                // ->iconButton()
                 // DeleteAction::make()
                 // ->icoButton()
                 ViewAction::make()

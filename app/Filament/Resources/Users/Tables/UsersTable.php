@@ -48,9 +48,9 @@ class UsersTable
             ->filters([
                 //
             ])
-            ->recordActions([
-                EditAction::make(),
-            ])
+            // ->recordActions([
+            //     EditAction::make(),
+            // ])
             ->Actions([
                  EditAction::make()
                 ->iconButton()

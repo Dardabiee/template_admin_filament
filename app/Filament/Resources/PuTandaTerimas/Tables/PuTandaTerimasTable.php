@@ -46,7 +46,8 @@ class PuTandaTerimasTable
             ])
              ->actions([
                 EditAction::make()
-                ->iconButton(),
+                ->iconButton()
+                ->authorize('update'),
             ], position: RecordActionsPosition::BeforeColumns)
             ->toolbarActions([
                 BulkActionGroup::make([

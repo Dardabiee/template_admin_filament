@@ -135,7 +135,7 @@ class KpsPrepaymentsTable
                 ViewAction::make()
                 ->iconButton(),
                 // DeleteAction::make()
-                // ->iconButton(),
+                // ->iconButton()
                 Action::make('bukti bayar')
                     ->icon('heroicon-o-document')
                     ->iconButton()

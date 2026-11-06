@@ -19,8 +19,8 @@ class ViewPuPrepayment extends ViewRecord
 
     protected string $view = 'filament.pages.view-pu-prepayment';
 
-     protected function getHeaderActions(): array
-            {
+    protected function getHeaderActions(): array
+    {
                 $user = Auth::user();
                 $userName = $user->name;
                 $userRole = $user->getRoleNames()->first();

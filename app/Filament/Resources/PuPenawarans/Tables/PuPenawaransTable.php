@@ -63,9 +63,11 @@ class PuPenawaransTable
             ])
             ->actions([
                 DeleteAction::make()
-                ->iconButton(),
+                ->iconButton()
+                ->authorize('delete'),
                 EditAction::make()
-                ->iconButton(),
+                ->iconButton()
+                ->authorize('update'),
             ], position: RecordActionsPosition::BeforeColumns)
             ->toolbarActions([
                 BulkActionGroup::make([

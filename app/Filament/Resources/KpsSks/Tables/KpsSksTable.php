@@ -37,7 +37,8 @@ class KpsSksTable
             ])
             ->actions([
                 EditAction::make()
-                ->iconButton(),
+                ->iconButton()
+                ->visible(fn () => auth()->user()?->hasAnyRole(['Super Admin', 'Admin', 'Finance', 'Direksi'])),
             ], position: RecordActionsPosition::BeforeColumns)
             ->toolbarActions([
                 BulkActionGroup::make([

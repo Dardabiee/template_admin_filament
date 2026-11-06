@@ -45,9 +45,11 @@ class QbgTransaksisTable
             ->defaultSort('created_at', 'desc')
             ->actions([
                 EditAction::make()
-                ->iconButton(),
+                ->iconButton()
+                ->authorize('update'),
                 DeleteAction::make()
                 ->iconButton()
+                ->authorize('delete')
             ], position: RecordActionsPosition::BeforeColumns)
             ->toolbarActions([
                 BulkActionGroup::make([

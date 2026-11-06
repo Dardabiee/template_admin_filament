@@ -19,7 +19,7 @@ class ViewKpsReimbust extends ViewRecord
 
     protected string $view = 'filament.pages.view-kps-reimbust';
 
-      protected function getHeaderActions(): array
+    protected function getHeaderActions(): array
         {
             $user = Auth::user();
             $userName = $user->name;

@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\PuCustomers\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
@@ -76,7 +77,11 @@ class PuCustomersTable
             ])
             ->actions([
                 EditAction::make()
-                ->iconButton(),
+                ->iconButton()
+                ->authorize('update'),
+                DeleteAction::make()
+                ->iconButton()
+                ->authorize('delete')
             ], position: RecordActionsPosition::BeforeColumns)
             ->toolbarActions([
                 BulkActionGroup::make([

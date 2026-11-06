@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 class ViewQbgDeklarasi extends ViewRecord
 {
     protected static string $resource = QbgDeklarasiResource::class;
-     protected string $view = 'filament.pages.view-qbg-deklarasi';
+    protected string $view = 'filament.pages.view-qbg-deklarasi';
     protected function getHeaderActions(): array
         {
             $user = Auth::user();

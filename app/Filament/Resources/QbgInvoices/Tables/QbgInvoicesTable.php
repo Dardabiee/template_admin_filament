@@ -73,9 +73,11 @@ class QbgInvoicesTable
                 ViewAction::make()
                 ->iconButton(),
                 EditAction::make()
-                ->iconButton(),
+                    ->iconButton()
+                    ->authorize('update'),
                 DeleteAction::make()
-                ->iconButton(),
+                    ->iconButton()
+                   ->authorize('delete'),
             ], position: RecordActionsPosition::BeforeColumns)
             ;
     }

@@ -38,9 +38,11 @@ class QbgSopsTable
             ])
             ->actions([
                 EditAction::make()
-                ->iconButton(),
+                ->iconButton()
+                ->authorize('update'),
                 DeleteAction::make()
                 ->iconButton()
+                ->authorize('delete')
             ], position: RecordActionsPosition::BeforeColumns)
             ->toolbarActions([
                 BulkActionGroup::make([

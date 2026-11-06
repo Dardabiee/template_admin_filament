@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PuTandaTerima extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
     protected $table = 'pu_tanda_terima';
     protected $primaryKey = 'id';
 

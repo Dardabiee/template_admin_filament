@@ -76,9 +76,11 @@ class PuSurveysTable
             ])
             ->actions([
                 EditAction::make()
-                ->iconButton(),
+                ->iconButton()
+                ->authorize('update'),
                 DeleteAction::make()
                 ->iconButton()
+                ->authorize('delete')
             ])
             ;
     }

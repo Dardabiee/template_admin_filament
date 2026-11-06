@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class KpsSk extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
     protected $table = 'kps_sk';
     protected $primaryKey = 'id';
 

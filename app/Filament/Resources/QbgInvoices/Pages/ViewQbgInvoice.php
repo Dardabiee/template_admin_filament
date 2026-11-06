@@ -119,9 +119,10 @@ class ViewQbgInvoice extends Page
                     ->success()
                     ->send();
             });
-    }
+        }
                 return $actions;
     }
+    
     public function mount(int|string $record): void
     {
         $this->record = $this->resolveRecord($record);

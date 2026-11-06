@@ -10,10 +10,11 @@ class ListKpsDeklarasis extends ListRecords
 {
     protected static string $resource = KpsDeklarasiResource::class;
 
-    // protected function getHeaderActions(): array
-    // {
-    //     return [
-    //         CreateAction::make(),
-    //     ];
-    // }
+    protected function getHeaderActions(): array
+    {
+        return [
+            CreateAction::make()
+            ->visible(fn () => auth()->user()?->hasAnyRole(['Super Admin', 'Admin', 'Finance', 'Direksi'])),
+        ];
+    }
 }

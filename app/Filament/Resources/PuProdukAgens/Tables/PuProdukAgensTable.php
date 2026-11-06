@@ -46,9 +46,11 @@ class PuProdukAgensTable
             ])
             ->recordActions([
                 EditAction::make()
-                ->iconButton(),
+                ->iconButton()
+                ->visible(fn () => auth()->user()?->hasAnyRole(['Super Admin', 'Admin', 'Finance', 'Direksi'])),
                 DeleteAction::make()
                 ->iconButton()
+                ->visible(fn () => auth()->user()?->hasAnyRole(['Super Admin', 'Admin', 'Finance', 'Direksi']))
             ], position: RecordActionsPosition::BeforeColumns)
             // ->toolbarActions([
             //     BulkActionGroup::make([

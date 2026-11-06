@@ -25,8 +25,6 @@ class KpsReimbustResource extends Resource
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Table Reimbust KPS ';
-
-
     // Tambahkan baris ini untuk mematikan auto-discover sidebar dari Resource ini
     protected static bool $shouldRegisterNavigation = false;
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

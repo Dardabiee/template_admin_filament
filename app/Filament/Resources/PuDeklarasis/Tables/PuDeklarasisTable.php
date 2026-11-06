@@ -5,6 +5,7 @@ namespace App\Filament\Resources\PuDeklarasis\Tables;
 use App\Filament\Resources\PuDeklarasis\Pages\ViewPuDeklarasi;
 use App\Models\PuDeklarasi;
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
@@ -71,7 +72,12 @@ class PuDeklarasisTable
             ])
             ->defaultSort('created_at', 'desc')
             ->Actions([
-                // EditAction::make(),
+                EditAction::make()
+                ->iconButton()
+                ->authorize('update'),
+                DeleteAction::make()
+                ->iconButton()
+                ->authorize('delete'),
                 ViewAction::make()
                 ->iconButton()
                 ->url( fn ($record): string => ViewPuDeklarasi::getUrl([$record->getKey()])),
