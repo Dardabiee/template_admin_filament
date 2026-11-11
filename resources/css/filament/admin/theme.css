@@ -4,3 +4,9 @@
 @source '../../../../resources/views/filament/**/*';
 @source '../../../../resources/views/components/**/*';
 @source '../../../../resources/views/filament/pages/*';
+
+/* Menyembunyikan tombol/ikon panah collapse di sebelah logo sidebar */
+.fi-sidebar-header button, 
+aside header button {
+    display: none !important;
+}

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class KpsKontrakPkwt extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'kps_kontrak_pkwt';
     protected $primaryKey = 'id';
 

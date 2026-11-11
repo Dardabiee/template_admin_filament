@@ -11,7 +11,7 @@ class SwUser extends Model
 {
     use HasFactory, Notifiable, HasRoles;
     
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'tbl_user'; // Atau 'tbl_data_user', sesuaikan dengan tabel user di database sw Anda
     protected $primaryKey = 'id_user';
     public $timestamps = false;

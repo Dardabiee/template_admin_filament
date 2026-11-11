@@ -15,7 +15,7 @@ use Filament\Tables\Table;
 
 class KpsDeklarasisTable
 {   
-     protected static ?string $model = KpsDeklarasi::class;
+    protected static ?string $model = KpsDeklarasi::class;
 
     public static function configure(Table $table): Table
     {

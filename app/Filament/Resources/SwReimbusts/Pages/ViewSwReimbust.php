@@ -9,18 +9,20 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Notifications\Notification;
-use Filament\Resources\Pages\Concerns\InteractsWithRecord;
-use Filament\Resources\Pages\Page;
+use Filament\Resources\Pages\ViewRecord;
 use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Support\Facades\Auth;
 
-class ViewSwReimbust extends Page
+class ViewSwReimbust extends ViewRecord
 {
-    use InteractsWithRecord;
-
     protected static string $resource = SwReimbustResource::class;
 
     protected string $view = 'filament.pages.view-sw-reimbust';
+
+    public function mount(int|string $record): void
+    {
+        parent::mount($record);
+    }
 
     protected function getHeaderActions(): array
         {

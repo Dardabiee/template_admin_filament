@@ -7,6 +7,7 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Enums\RecordActionsPosition;
 use Filament\Tables\Table;
 
 class PuSurveysTable
@@ -81,7 +82,7 @@ class PuSurveysTable
                 DeleteAction::make()
                 ->iconButton()
                 ->authorize('delete')
-            ])
+            ], position:RecordActionsPosition::BeforeColumns)
             ;
     }
 }

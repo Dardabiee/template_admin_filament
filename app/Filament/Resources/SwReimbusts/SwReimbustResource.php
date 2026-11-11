@@ -53,7 +53,7 @@ class SwReimbustResource extends Resource
             'index' => ListSwReimbusts::route('/'),
             'create' => CreateSwReimbust::route('/create'),
             'edit' => EditSwReimbust::route('/{record}/edit'),
-            'view' => ViewSwReimbust::route('/{record')
+            'view' => ViewSwReimbust::route('/{record}'),
         ];
     }
 }

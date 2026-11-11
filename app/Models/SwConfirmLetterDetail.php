@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class SwConfirmLetterDetail extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'sw_confirm_letter_detail';
     protected $primaryKey = 'id';
     public $timestamps = false;

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class QbgInvoiceDetail extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'qbg_detail_invoice';
     protected $primaryKey = 'id';
     public $timestamps = false;

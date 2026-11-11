@@ -19,7 +19,12 @@ class ViewQbgReimbust extends ViewRecord
     protected static string $resource = QbgReimbustResource::class;
     protected string $view = 'filament.pages.view-qbg-reimbust';
 
-       protected function getHeaderActions(): array
+    public function mount(int|string $record): void
+    {
+        parent::mount($record);
+    }
+
+    protected function getHeaderActions(): array
         {
             $user = Auth::user();
             $userName = $user->name;

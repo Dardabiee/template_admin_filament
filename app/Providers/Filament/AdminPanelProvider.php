@@ -73,7 +73,7 @@ class AdminPanelProvider extends PanelProvider
                
             ])
             ->globalSearch(false)
-            ->sidebarFullyCollapsibleOnDesktop()
+            // ->sidebarFullyCollapsibleOnDesktop()
             ->userMenuItems([
                 [
                 Action::make('Change Password')
@@ -127,7 +127,7 @@ class AdminPanelProvider extends PanelProvider
     }
 
     /**
-     * Membangun array navigasi dinamis dari database (Aman dari Bypass Shield)
+- Membangun array navigasi dinamis dari database (Aman dari Bypass Shield)
      */
     private static function getDynamicNavigationItems(): array
     {
@@ -167,7 +167,7 @@ class AdminPanelProvider extends PanelProvider
     }
 
     /**
-     * Helper rekursif untuk child & sub-child menu
+- Helper rekursif untuk child & sub-child menu
      */
     private static function buildNestedNavigation($children, string $groupName, array &$items): void
     {
@@ -189,7 +189,7 @@ class AdminPanelProvider extends PanelProvider
     }
 
     /**
-     * Helper resolusi URL (Mendukung Named Routes & Raw Links)
+     Helper resolusi URL (Mendukung Named Routes & Raw Links)
      */
     private static function resolveUrl(?string $path): string
     {
@@ -204,3 +204,4 @@ class AdminPanelProvider extends PanelProvider
         return url($path);
     }
 }
+

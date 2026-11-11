@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class PuPrepayment extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'pu_prepayment';
     protected $primaryKey = 'id';
     public $timestamps = false;

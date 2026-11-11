@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class QbgDeklarasi extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'qbg_deklarasi';
     protected $primaryKey = 'id';
     public $timestamps = false;

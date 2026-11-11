@@ -121,7 +121,7 @@ class ViewSwPrepayment extends ViewRecord
                     ->success()
                     ->send();
             });
-    }
+        }
 
                 // Tombol APPROVAL UNTUK MANAGER / DIREKSI (Tier 2)
                 if ($userRole === 'Manager' || $userRole === 'Direksi' || $userRole === 'Super Admin') {

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class KpsReimbust extends Model
 {
     //
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'kps_reimbust';
     protected $primaryKey = 'id';
     public $timestamps = false;

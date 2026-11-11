@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PuAgen extends Model
 {   
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'pu_data_agen'; 
     protected $primaryKey = 'id';
     public $timestamps = false; 

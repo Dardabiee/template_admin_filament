@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class SwDeklarasi extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'sw_deklarasi';
     protected $primaryKey = 'id';
     public $timestamps = false;

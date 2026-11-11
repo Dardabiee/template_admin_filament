@@ -167,7 +167,7 @@ class KpsRekapitulasi extends Page implements HasTable, HasForms
         if ($this->activeTab === 'pelaporan') {
             $columns = [
                 TextColumn::make('kode_prepayment')->label('Kode Prepayment')->searchable(),
-                TextColumn::make('kode_reimbust')->label('Kode Reimbust')->placeholder('-')
+                TextColumn::make('kode_reimbust')->label('Kode Reimbust')->formatStateUsing(fn ($state) => strtoupper($state))->searchable()->placeholder('-')
                     ->searchable(query: fn (Builder $q, string $s) => $q->where('kps_reimbust.kode_reimbust', 'like', "%{$s}%")),
                 TextColumn::make('name')->label('Nama')->searchable(query: $searchName),
                 TextColumn::make('tujuan')->label('Keterangan')->searchable(),

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class KpsPrepaymentDetail extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
     protected $table = 'kps_prepayment_detail';
     protected $primaryKey = 'id';
     public $timestamps = false;
