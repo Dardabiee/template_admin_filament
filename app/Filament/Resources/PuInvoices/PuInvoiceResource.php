@@ -18,7 +18,7 @@ class PuInvoiceResource extends Resource
 {
     protected static ?string $model = PuInvoice::class;
     protected static ?string $navigationLabel = 'Invoice PU';
-    protected static ?string $modelLabel = 'View Invoice';
+    protected static ?string $modelLabel = ' Invoice';
      // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Invoice PU';
     protected static bool $shouldRegisterNavigation = false;

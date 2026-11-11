@@ -18,7 +18,7 @@ class BmnSkResource extends Resource
 {
     protected static ?string $model = BmnSk::class;
     protected static ?string $navigationLabel = 'BMN SK';
-    protected static ?string $modelLabel = 'View SK';
+    protected static ?string $modelLabel = ' SK';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Table SK BMN ';

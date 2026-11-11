@@ -19,7 +19,7 @@ class PuSopResource extends Resource
     protected static ?string $model = PuSop::class;
 
     protected static ?string $navigationLabel = 'SOP';
-    protected static ?string $modelLabel = 'View SOP';
+    protected static ?string $modelLabel = ' SOP';
      // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'SOP';
     protected static bool $shouldRegisterNavigation = false;

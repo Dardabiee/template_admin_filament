@@ -18,7 +18,7 @@ class QbgTransaksiResource extends Resource
 {
     protected static ?string $model = QbgTransaksi::class;
     protected static ?string $navigationLabel = 'QBG Transaksi';
-    protected static ?string $modelLabel = 'View Transaksi';
+    protected static ?string $modelLabel = ' Transaksi';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'QBG Transaksi';

@@ -19,7 +19,7 @@ class PuNotifikasiResource extends Resource
 {
     protected static ?string $model = PuNotifikasi::class;
     protected static ?string $navigationLabel = 'Notifikasi';
-    protected static ?string $modelLabel = 'View Notifikasi';
+    protected static ?string $modelLabel = ' Notifikasi';
      // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Notifikasi';
     protected static bool $shouldRegisterNavigation = false;

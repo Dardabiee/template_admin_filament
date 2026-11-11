@@ -19,7 +19,7 @@ class PuHotelResource extends Resource
     protected static ?string $model = PuHotel::class;
 
     protected static ?string $navigationLabel = 'Hotel';
-    protected static ?string $modelLabel = 'View Hotel';
+    protected static ?string $modelLabel = ' Hotel';
      // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Hotel';
     protected static bool $shouldRegisterNavigation = false;

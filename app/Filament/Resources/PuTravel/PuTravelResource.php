@@ -19,7 +19,7 @@ class PuTravelResource extends Resource
     protected static ?string $model = PuTravel::class;
 
     protected static ?string $navigationLabel = 'Travel';
-    protected static ?string $modelLabel = 'View Travel';
+    protected static ?string $modelLabel = ' Travel';
      // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Travel';
     protected static bool $shouldRegisterNavigation = false;

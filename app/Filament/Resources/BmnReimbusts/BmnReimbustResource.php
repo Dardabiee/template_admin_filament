@@ -19,7 +19,7 @@ class BmnReimbustResource extends Resource
 {
     protected static ?string $model = BmnReimbust::class;
     protected static ?string $navigationLabel = 'BMN Reimbust';
-    protected static ?string $modelLabel = 'View Reimbust';
+    protected static ?string $modelLabel = ' Reimbust';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Table Reimbust BMN ';

@@ -21,7 +21,7 @@ class BmnPrepaymentResource extends Resource
 
      // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
     protected static ?string $navigationLabel = 'BMN Prepayment';
-    protected static ?string $modelLabel = 'View Prepayment';
+    protected static ?string $modelLabel = ' Prepayment';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Table Prepayment BMN ';

@@ -19,7 +19,7 @@ class CtzReimbustResource extends Resource
 {
     protected static ?string $model = CtzReimbust::class;
     protected static ?string $navigationLabel = 'Reimbust';
-    protected static ?string $modelLabel = 'View Reimbust';
+    protected static ?string $modelLabel = ' Reimbust';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Table Reimbust ';

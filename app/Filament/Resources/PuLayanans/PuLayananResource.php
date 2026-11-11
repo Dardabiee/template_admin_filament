@@ -18,7 +18,7 @@ class PuLayananResource extends Resource
 {
     protected static ?string $model = PuLayanan::class;
     protected static ?string $navigationLabel = 'Layanan PU';
-    protected static ?string $modelLabel = 'View Layanan PU';
+    protected static ?string $modelLabel = ' Layanan PU';
      // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Layanan PU';
     protected static bool $shouldRegisterNavigation = false;

@@ -18,7 +18,7 @@ class BmnSopResource extends Resource
 {
     protected static ?string $model = BmnSop::class;
     protected static ?string $navigationLabel = 'BMN SOP';
-    protected static ?string $modelLabel = 'View SOP';
+    protected static ?string $modelLabel = ' SOP';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Table SOP BMN ';

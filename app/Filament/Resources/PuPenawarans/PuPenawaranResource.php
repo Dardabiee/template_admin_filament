@@ -19,7 +19,7 @@ class PuPenawaranResource extends Resource
     protected static ?string $model = PuPenawaran::class;
 
     protected static ?string $navigationLabel = 'Penawaran';
-    protected static ?string $modelLabel = 'View Penawaran PU';
+    protected static ?string $modelLabel = ' Penawaran PU';
      // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Penawaran';
 

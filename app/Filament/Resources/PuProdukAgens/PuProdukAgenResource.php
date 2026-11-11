@@ -19,7 +19,7 @@ class PuProdukAgenResource extends Resource
     protected static ?string $model = PuProdukAgen::class;
 
     protected static ?string $navigationLabel = 'Produk Agen';
-    protected static ?string $modelLabel = 'View Produk Agen';
+    protected static ?string $modelLabel = ' Produk Agen';
      // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Produk Agen';
     protected static bool $shouldRegisterNavigation = false;

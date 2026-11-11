@@ -19,7 +19,7 @@ class SwConfirmLetterResource extends Resource
     protected static ?string $model = SwConfirmLetter::class;
 
     protected static ?string $navigationLabel = 'SW Confirm Letter';
-    protected static ?string $modelLabel = 'View Confirm Letter';
+    protected static ?string $modelLabel = ' Confirm Letter';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'SW Confirm Letter';

@@ -18,7 +18,7 @@ class SwSopResource extends Resource
 {
     protected static ?string $model = SwSop::class;
     protected static ?string $navigationLabel = 'SW SOP';
-    protected static ?string $modelLabel = 'View SOP';
+    protected static ?string $modelLabel = ' SOP';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'SW SOP';

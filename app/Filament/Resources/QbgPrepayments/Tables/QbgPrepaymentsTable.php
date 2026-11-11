@@ -14,6 +14,7 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\HtmlString;
 
 class QbgPrepaymentsTable
 {   
@@ -137,8 +138,12 @@ class QbgPrepaymentsTable
                     ->iconButton()
                     ->color('success')
                     ->visible(fn ($record) => $record->payment_status === 'paid' && !empty($record->attachment))
-                    ->url(fn ($record) => asset('/assets/img/documents/prepayments/pu/' . $record->attachment ))
-                    ->openUrlInNewTab(),    
+                    ->modalHeading('Bukti Pembayaran')
+                    ->modalContent(fn ($record) => new HtmlString(
+                        '<img src="' . e(asset('/assets/documents/reimbust/swi/' . $record->attachment)) . '" alt="Bukti pembayaran" style="display:block; max-width:100%; max-height:80vh; height:auto; margin:0 auto;">'
+                    ))
+                    ->modalSubmitAction(false)
+                    ->modalCancelActionLabel('Tutup'),  
             ], position: RecordActionsPosition::BeforeColumns)
             ->toolbarActions([
                 BulkActionGroup::make([

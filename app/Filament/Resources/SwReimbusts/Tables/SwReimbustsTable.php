@@ -15,6 +15,7 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\HtmlString;
 
 class SwReimbustsTable
 {
@@ -139,8 +140,12 @@ class SwReimbustsTable
                     ->color('success')
                     ->visible(fn ($record) => $record->payment_status === 'paid' && !empty($record->attachment))
                     // Membuka file attachment di tab baru browser
-                    ->url(fn ($record) => asset('/assets/img/documents/reimbust/pu/' . $record->attachment )) // Sesuaikan path folder storage jika berbeda
-                    ->openUrlInNewTab(),
+                    ->modalHeading('Bukti Pembayaran')
+                    ->modalContent(fn ($record) => new HtmlString(
+                        '<img src="' . e(asset('/assets/documents/reimbust/swi/' . $record->attachment)) . '" alt="Bukti pembayaran" style="display:block; max-width:100%; max-height:80vh; height:auto; margin:0 auto;">'
+                    ))
+                    ->modalSubmitAction(false)
+                    ->modalCancelActionLabel('Tutup'),
             ], position: RecordActionsPosition::BeforeColumns);
     }
 }

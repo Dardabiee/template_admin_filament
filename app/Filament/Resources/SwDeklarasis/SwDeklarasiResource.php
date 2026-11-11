@@ -19,7 +19,7 @@ class SwDeklarasiResource extends Resource
 {
     protected static ?string $model = SwDeklarasi::class;
     protected static ?string $navigationLabel = 'SW Deklarasi';
-    protected static ?string $modelLabel = 'View Deklarasi';
+    protected static ?string $modelLabel = ' Deklarasi';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'SW Deklarasi';

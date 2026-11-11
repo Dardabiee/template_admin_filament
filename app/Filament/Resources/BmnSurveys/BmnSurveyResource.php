@@ -18,7 +18,7 @@ class BmnSurveyResource extends Resource
 {
     protected static ?string $model = BmnSurvey::class;
     protected static ?string $navigationLabel = 'Survey';
-    protected static ?string $modelLabel = 'View Survey';
+    protected static ?string $modelLabel = ' Survey';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Table Survey';

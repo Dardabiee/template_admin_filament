@@ -20,7 +20,7 @@ class SwiSkResource extends Resource
 
      // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
     protected static ?string $navigationLabel = 'SK';
-    protected static ?string $modelLabel = 'View SK';
+    protected static ?string $modelLabel = ' SK';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'Table SK  ';

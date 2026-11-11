@@ -18,7 +18,7 @@ class QbgSkResource extends Resource
 {
     protected static ?string $model = QbgSk::class;
     protected static ?string $navigationLabel = 'QBG SK';
-    protected static ?string $modelLabel = 'View SK';
+    protected static ?string $modelLabel = ' SK';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'QBG SK';

@@ -20,7 +20,7 @@ class QbgReimbustResource extends Resource
     protected static ?string $model = QbgReimbust::class;
      // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
     protected static ?string $navigationLabel = 'QBG Reimbust';
-    protected static ?string $modelLabel = 'View Reimbust';
+    protected static ?string $modelLabel = ' Reimbust';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'QBG Reimbust';

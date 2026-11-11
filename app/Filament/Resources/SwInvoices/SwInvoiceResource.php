@@ -20,7 +20,7 @@ class SwInvoiceResource extends Resource
     protected static ?string $model = SwInvoice::class;
 
     protected static ?string $navigationLabel = 'SW Invoice';
-    protected static ?string $modelLabel = 'View Invoice';
+    protected static ?string $modelLabel = ' Invoice';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'SW Invoice';

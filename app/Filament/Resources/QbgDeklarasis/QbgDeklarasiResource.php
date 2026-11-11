@@ -20,7 +20,7 @@ class QbgDeklarasiResource extends Resource
     protected static ?string $model = QbgDeklarasi::class;
      // 1. Mengatur Label Menu Sidebar (Hilangkan huruf "s" di sini)
     protected static ?string $navigationLabel = 'QBG Deklarasi';
-    protected static ?string $modelLabel = 'View Deklarasi';
+    protected static ?string $modelLabel = ' Deklarasi';
 
     // 2. Mengatur Judul Plural (Nama Halaman/Tabel) agar tidak pakai "s" otomatis
     protected static ?string $pluralModelLabel = 'QBG Deklarasi';
