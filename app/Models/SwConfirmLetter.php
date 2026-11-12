@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SwConfirmLetter extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'sw_confirm_letter';
     protected $primaryKey = 'id';
     public $timestamps = false; // Menyesuaikan tabel legacy CI3

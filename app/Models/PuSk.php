@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PuSk extends Model
 {
-    //protectted $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'pu_sk'; // Nama tabel dari database
     protected $primaryKey = 'id';
     public $timestamps = true; // Mengaktifkan created_at & updated_at jika digunakan

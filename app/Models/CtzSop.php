@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class CtzSop extends Model
 {
-    //protected $connection = 'sw;
+    protected $connection = 'sw';
+
     protected $table = 'ctz_sop';
     protected $primaryKey = 'id';
     public $timestamps = false; 

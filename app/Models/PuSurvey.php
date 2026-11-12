@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PuSurvey extends Model
 {   
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'pu_survey'; 
     protected $primaryKey = 'id';
     public $timestamps = false; 

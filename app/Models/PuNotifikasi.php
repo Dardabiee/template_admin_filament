@@ -9,7 +9,8 @@ use Carbon\Carbon;
 
 class PuNotifikasi extends Model
 {   
-    //protected $connection =
+    protected $connection = 'sw';
+
     protected $table = 'pu_notifikasi'; // Nama tabel database
     protected $primaryKey = 'id';
     public $timestamps = false; // Sesuaikan jika tabel tidak memiliki created_at/updated_at bawaan Laravel

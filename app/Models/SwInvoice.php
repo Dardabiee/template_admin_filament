@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SwInvoice extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'sw_invoice';
     protected $primaryKey = 'id';
     public $timestamps = false; // Menyesuaikan tabel legacy CI3

@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class CtzReimbust extends Model
 {
-    //protected $table = 'ctz_reimbust';
+    protected $connection = 'sw';
+
     protected $table = 'ctz_reimbust';
     protected $primaryKey = 'id';
 

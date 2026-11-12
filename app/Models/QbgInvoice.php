@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\DB;
 
 class QbgInvoice extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'qbg_invoice';
     protected $primaryKey = 'id';
     public $timestamps = false; // Menyesuaikan tabel legacy CI3

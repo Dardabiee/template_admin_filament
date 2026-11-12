@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class QbgSK extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'qbg_sk'; 
     protected $primaryKey = 'id';
     public $timestamps = true; 

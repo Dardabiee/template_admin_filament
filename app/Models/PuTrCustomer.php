@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PuTrCustomer extends Model
 {   
-    // //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'pu_tr_customer'; // Nama tabel transaksi
     protected $primaryKey = 'id';
     public $timestamps = false;

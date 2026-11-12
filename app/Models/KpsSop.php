@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class KpsSop extends Model
 {   
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'kps_sop'; // Nama tabel database[cite: 7]
     protected $primaryKey = 'id';
     public $timestamps = false; // Set true jika tabel menggunakan created_at & updated_at otomatis

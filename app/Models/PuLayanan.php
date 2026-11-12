@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PuLayanan extends Model
 {   
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'pu_layanan'; // Nama tabel dari database[cite: 11]
     protected $primaryKey = 'id';
     public $timestamps = false; // Ubah ke true jika tabel menggunakan created_at & updated_at otomatis

@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SwiReimbust extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'swi_reimbust';
     protected $primaryKey = 'id';
     public $timestamps = false;

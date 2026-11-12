@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class QbgPrepayment extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'qbg_prepayment';
     protected $primaryKey = 'id';
     public $timestamps = false;

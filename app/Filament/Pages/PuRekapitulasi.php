@@ -45,7 +45,7 @@ class PuRekapitulasi extends Page implements HasTable, HasForms
         $this->loadTotals();
     }
 
-     public function form(Schema $schema): Schema
+    public function form(Schema $schema): Schema
     {
         return $schema
             ->components([

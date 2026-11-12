@@ -12,7 +12,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class QbgReimbust extends Model
 {
     //
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'qbg_reimbust';
     protected $primaryKey = 'id';
     public $timestamps = false;

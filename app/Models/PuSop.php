@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class PuSop extends Model
 {   
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'pu_sop';
     protected $primaryKey = 'id';
     public $timestamps = false; // Menyesuaikan tabel legacy CI3

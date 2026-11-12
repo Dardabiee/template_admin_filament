@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PuDetailInvoice extends Model
 {   
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
+
     protected $table = 'pu_detail_invoice';
     protected $primaryKey = 'id';
     public $timestamps = false;

@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SwSop extends Model
 {
-    //protected $connection = 'sw;
+    protected $connection = 'sw';
+
     protected $table = 'sw_sop';
     protected $primaryKey = 'id';
     public $timestamps = false; 
