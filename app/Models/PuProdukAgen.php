@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PuProdukAgen extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
     protected $table = 'pu_produk_agen'; // Nama tabel dari database[cite: 21]
     protected $primaryKey = 'id';

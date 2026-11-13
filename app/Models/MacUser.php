@@ -12,7 +12,8 @@ class MacUser extends Model
     
     use HasFactory, Notifiable, HasRoles;
 
-    protected $connection = 'mac';
+    //protected $connection = 'mac';
+
 
     protected $table = 'tbl_user';
     protected $primaryKey = 'id_user';

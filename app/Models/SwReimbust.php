@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SwReimbust extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
     protected $table = 'sw_reimbust';
     protected $primaryKey = 'id';

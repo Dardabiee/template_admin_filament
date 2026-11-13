@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class MacReimbustDetail extends Model
 {
-    protected $connection = 'mac';
+    //protected $connection = 'mac';
+
 
     protected $table = 'mac_reimbust_detail';
     protected $primaryKey = 'id';

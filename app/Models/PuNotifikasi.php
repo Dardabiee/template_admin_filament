@@ -9,7 +9,8 @@ use Carbon\Carbon;
 
 class PuNotifikasi extends Model
 {   
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
     protected $table = 'pu_notifikasi'; // Nama tabel database
     protected $primaryKey = 'id';

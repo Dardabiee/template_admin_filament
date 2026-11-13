@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class PuOrder extends Model
 {   
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
     protected $table = 'pu_order';
     protected $primaryKey = 'id';

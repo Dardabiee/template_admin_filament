@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class MacDeklarasi extends Model
 {
-    protected $connection = 'mac';
+    //protected $connection = 'mac';
+
 
     protected $table = 'mac_deklarasi';
     protected $primaryKey = 'id';

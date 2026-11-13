@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class MacReimbust extends Model
 {
-    protected $connection = 'mac';
+    //protected $connection = 'mac';
+
 
     protected $table = 'mac_reimbust';
     protected $primaryKey = 'id';

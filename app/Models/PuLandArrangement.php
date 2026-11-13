@@ -8,7 +8,8 @@ use Carbon\Carbon;
 
 class PuLandArrangement extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
     protected $table = 'pu_land_arrangement'; // Nama tabel database[cite: 10]
     protected $primaryKey = 'id';

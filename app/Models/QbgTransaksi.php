@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class QbgTransaksi extends Model
 {   
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
     protected $table = 'qbg_transaksi';
     protected $primaryKey = 'id';

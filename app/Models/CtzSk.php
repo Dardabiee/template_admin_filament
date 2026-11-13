@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class CtzSk extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
     protected $table = 'ctz_sk'; // Nama tabel dari database
     protected $primaryKey = 'id';

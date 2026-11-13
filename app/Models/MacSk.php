@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class MacSk extends Model
 {
-    protected $connection = 'mac';
+    //protected $connection = 'mac';
+
 
     protected $table = 'mac_sk'; // Nama tabel dari database
     protected $primaryKey = 'id';

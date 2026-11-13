@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class SwiSk extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
     protected $table = 'swi_sk';
     protected $primaryKey = 'id';

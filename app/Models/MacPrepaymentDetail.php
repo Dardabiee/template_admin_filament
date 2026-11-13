@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class MacPrepaymentDetail extends Model
 {
-    protected $connection = 'mac';
+    //protected $connection = 'mac';
+
 
     protected $table = 'mac_prepayment_detail';
     protected $primaryKey = 'id';

@@ -87,7 +87,7 @@ return [
             'port' => env('DB_PORT_MAC', '3306'),
             'database' => env('DB_DATABASE_MAC', 'mac'),
             'username' => env('DB_USERNAME_MAC', 'root'),
-            'pasMACord' => env('DB_PASSWORD_SW', ''),
+            'password' => env('DB_PASSWORD_MAC', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => env('DB_CHARSET', 'utf8mb4'),
             'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
