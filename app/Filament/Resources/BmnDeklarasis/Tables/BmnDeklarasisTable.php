@@ -48,8 +48,6 @@ class BmnDeklarasisTable
                 // TextColumn::make('app2_date')
                 //     ->dateTime()
                 //     ->sortable(),
-                TextColumn::make('status')
-                    ->searchable(),
                 TextColumn::make('is_active')
                     ->numeric()
                     ->sortable(),

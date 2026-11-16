@@ -4,7 +4,7 @@
         <!-- HEADER / KOP -->
         <div class="flex justify-between items-center pb-4 mb-6">
             <div class="flex items-center gap-3">
-                <img src="{{ asset('/assets/img/sub-bisnis/kps/logo.png') }}" alt="Logo" class="h-15 object-contain">
+                <img src="{{ asset('/assets/img/sub-bisnis/kps/kolaborasi-sidebar.png') }}" alt="Logo" class="h-15 object-contain">
                 
             </div>
             <div class="text-right">

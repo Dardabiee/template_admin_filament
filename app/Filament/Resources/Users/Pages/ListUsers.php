@@ -14,7 +14,7 @@ class ListUsers extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make()
+            CreateAction::make()->authorize('create')
             ->label('Tambah User')
             ->modalHeading('Buat User Baru')
             ->modalWidth('2xl')

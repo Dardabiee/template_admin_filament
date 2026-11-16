@@ -82,7 +82,7 @@ class ViewQbgPrepayment extends ViewRecord
                 }
 
                 if ($userRole === 'Finance') {
-        $actions[] = Action::make('payment_status')
+               $actions[] = Action::make('payment_status')
             ->label('Payment')
             ->color('primary')
             ->icon('heroicon-o-wallet')
@@ -121,7 +121,7 @@ class ViewQbgPrepayment extends ViewRecord
                     ->success()
                     ->send();
             });
-    }
+         }
 
                 // Tombol APPROVAL UNTUK MANAGER / DIREKSI (Tier 2)
                 if ($userRole === 'Manager' || $userRole === 'Direksi' || $userRole === 'Super Admin') {

@@ -53,14 +53,14 @@ class CtzPrepaymentsTable
                 }
             }) 
             ->columns([
-                TextColumn::make('status')
+                 TextColumn::make('payment_status')
                     ->searchable()
                     ->badge()
                     ->color( fn ($state): string => match ($state){
                         'on-process' => 'primary',
                         'revised' => 'warning',
-                        'approved' => 'success',
-                        'rejected' => 'danger',
+                        'paid' => 'success',
+                        'unpaid' => 'danger',
                     }),
                 TextColumn::make('kode_prepayment')
                     ->searchable(),
@@ -84,8 +84,8 @@ class CtzPrepaymentsTable
                     ->sortable(),
                 // TextColumn::make('no_rek')
                 //     ->searchable(),
-                TextColumn::make('payment_status')
-                    ->label('Payment Status')
+                TextColumn::make('status')
+                    ->label('Status')
                     ->formatStateUsing(fn ($state, $record): string => "{$state} ({$record->app_name})")
                     ->searchable(),
                 // TextColumn::make('tgl_pembayaran')

@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    @vite('resources/css/app.css')
-    <link rel="icon" type="image/webp" href="../images/logo-holding Background Removed.png">
+    <link rel="icon" type="image/webp" href="../assets/img/sub-bisnis/kps/kolaborasi-sidebar.png">
 
     <script>
         tailwind.config = {
@@ -107,7 +107,7 @@
     <div id="pageLoader" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-900 transition-all duration-700 ease-in-out opacity-100 backdrop-blur-sm">
         <div class="flex flex-col items-center animate-float">
             <!-- Ganti src di bawah dengan path logo utama yang Anda inginkan -->
-            <img src="../images/logo-holding Background Removed.png" alt="Logo Loading" class="w-24 h-24 md:w-28 md:h-28 object-contain mb-8 drop-shadow-xl">
+            <img src="../assets/img/sub-bisnis/kps/kolaborasi-sidebar.png" alt="Logo Loading" class="w-28 h-28 md:w-28 md:h-28 object-contain mb-8 drop-shadow-xl">
             
             <div class="flex flex-col items-center w-48">
                 <div class="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden mb-3">

@@ -13,7 +13,7 @@ class ListMacDeklarasis extends ListRecords
     // protected function getHeaderActions(): array
     // {
     //     return [
-    //         CreateAction::make()->authorize('create'),
+    //         CreateAction::make()->authorize('create')->authorize('create'),
     //     ];
     // }
 }

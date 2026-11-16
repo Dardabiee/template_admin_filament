@@ -60,14 +60,14 @@ class CtzReimbustsTable
                     ->formatStateUsing(fn ($state) => strtoupper($state)),
                 // TextColumn::make('kode_prepayment')
                 //     ->searchable(),
-                 TextColumn::make('status')
+                  TextColumn::make('payment_status')
                     ->searchable()
                     ->badge()
                     ->color( fn ($state): string => match ($state){
                         'on-process' => 'primary',
                         'revised' => 'warning',
-                        'approved' => 'success',
-                        'rejected' => 'danger',
+                        'paid' => 'success',
+                        'unpaid' => 'danger',
                     }),
                 TextColumn::make('user.fullname')
                     ->numeric()
@@ -82,7 +82,9 @@ class CtzReimbustsTable
                     ->sortable(),
                 TextColumn::make('tujuan')
                     ->searchable(),
-                TextColumn::make('payment_status')
+                TextColumn::make('status')
+                    ->label('Status')
+                    ->formatStateUsing(fn ($state, $record): string => "{$state} ({$record->app_name})")
                     ->searchable(),
                 // TextColumn::make('departemen')
                 //     ->searchable(),

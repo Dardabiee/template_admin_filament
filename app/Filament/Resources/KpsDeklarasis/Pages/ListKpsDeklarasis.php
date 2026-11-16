@@ -13,7 +13,7 @@ class ListKpsDeklarasis extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make()
+            CreateAction::make()->authorize('create')
             ->visible(fn () => auth()->user()?->hasAnyRole(['Super Admin', 'Admin', 'Finance', 'Direksi'])),
         ];
     }

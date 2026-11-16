@@ -63,9 +63,9 @@ class AdminPanelProvider extends PanelProvider
            ->assets([
                 Css::make('custom-stylesheet',  asset('css/filament/custom.css')) 
             ])
-            ->brandLogo(asset('images/logo-holding Background Removed.png'))
+            ->brandLogo(asset('/assets/img/sub-bisnis/kps/kolaborasi-sidebar.png'))
             ->brandLogoHeight('5rem')
-            ->favicon(asset('images/logo-holding Background Removed.png'))
+            ->favicon(asset('/assets/img/sub-bisnis/kps/kolaborasi-sidebar.png'))
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 // AccountWidget::class,

@@ -5,7 +5,7 @@
         <div class="flex justify-between items-center pb-4 mb-6">
             <div class="flex items-center gap-3">
                 <!-- Ganti dengan asset logo Anda -->
-                <img src="{{ asset('/assets/img/sub-bisnis/kps/logo.png') }}" alt="Logo" class="h-15 object-contain">
+                <img src="{{ asset('/assets/img/sub-bisnis/kps/kolaborasi-sidebar.png') }}" alt="Logo" class="h-15 object-contain">
                 {{-- <div>
                     <h2 class="font-bold text-gray-700 dark:text-gray-200">KOLABORASI PARA SAHABAT</h2>
                 </div> --}}

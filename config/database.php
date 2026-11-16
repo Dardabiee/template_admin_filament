@@ -94,6 +94,34 @@ return [
             'prefix' => '',
         ],
 
+        'samlog' => [
+            'driver' => 'mysql',
+            'url' => env('DB_URL'),
+            'host' => env('DB_HOST_SML', '127.0.0.1'),
+            'port' => env('DB_PORT_SML', '3306'),
+            'database' => env('DB_DATABASE_SML', 'samlog'),
+            'username' => env('DB_USERNAME_SML', 'root'),
+            'password' => env('DB_PASSWORD_SML', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => env('DB_CHARSET', 'utf8mb4'),
+            'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+            'prefix' => '',
+        ],
+
+        'hm' => [
+            'driver' => 'mysql',
+            'url' => env('DB_URL'),
+            'host' => env('DB_HOST_HM', '127.0.0.1'),
+            'port' => env('DB_PORT_HM', '3306'),
+            'database' => env('DB_DATABASE_HM', 'hayfamadina'),
+            'username' => env('DB_USERNAME_HM', 'root'),
+            'password' => env('DB_PASSWORD_HM', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => env('DB_CHARSET', 'utf8mb4'),
+            'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+            'prefix' => '',
+        ],
+
         'mariadb' => [
             'driver' => 'mariadb',
             'url' => env('DB_URL'),

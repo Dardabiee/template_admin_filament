@@ -14,7 +14,7 @@ class ListMenus extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make()
+            CreateAction::make()->authorize('create')
             ->label('Tambah Menu')
             ->modalHeading('Buat Menu Baru')
             ->modalWidth('3xl')
