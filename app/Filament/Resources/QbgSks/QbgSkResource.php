@@ -7,7 +7,7 @@ use App\Filament\Resources\QbgSks\Pages\EditQbgSk;
 use App\Filament\Resources\QbgSks\Pages\ListQbgSks;
 use App\Filament\Resources\QbgSks\Schemas\QbgSkForm;
 use App\Filament\Resources\QbgSks\Tables\QbgSksTable;
-use App\Models\QbgSk;
+use App\Models\QbgSK;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -16,7 +16,7 @@ use Filament\Tables\Table;
 
 class QbgSkResource extends Resource
 {
-    protected static ?string $model = QbgSk::class;
+    protected static ?string $model = QbgSK::class;
     protected static ?string $navigationLabel = 'QBG SK';
     protected static ?string $modelLabel = ' SK';
 
