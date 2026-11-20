@@ -49,6 +49,8 @@ class AdminPanelProvider extends PanelProvider
                 PanelsRenderHook::BODY_END,
                 fn () => Blade::render('<livewire:change-password-modal />'),
             )
+            ->databaseNotifications()
+            ->databaseNotificationsPolling('30s')
             // Aktifkan baris ini jika ingin menggunakan menu dari database:
             ->navigationItems(self::getDynamicNavigationItems())
             ->login(Login::class)

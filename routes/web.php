@@ -16,3 +16,10 @@ Route::get('/apasih-sokasik-beut', function () {
 
     return 'Selesai: config, cache, view, route sudah di-clear.';
 });
+
+Route::post('/notifications/read-all', function () {
+    if (auth()->check()) {
+        auth()->user()->unreadNotifications->markAsRead();
+    }
+    return back();
+})->name('notifications.readAll')->middleware(['auth']);

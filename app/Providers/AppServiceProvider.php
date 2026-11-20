@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use App\Models\User;
 use App\Models\Menu;
+// use App\Models\MacReimbust;
 use App\Observers\MenuObserver;
+// use App\Observers\MacReimbustObserver;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 // use Illuminate\Support\Facades\Schema;
@@ -32,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
             
         });
         Menu::observe(MenuObserver::class);
+        // MacReimbust::observe(MacReimbustObserver::class);
 
         // if (Schema::hasTable('permissions')) {
         //     $customPermissions = Permission::whereNotIn('name', function ($query) {

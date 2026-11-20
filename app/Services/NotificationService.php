@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Filament\Facades\Filament;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
@@ -34,8 +35,17 @@ class NotificationService
             $tableName = $submenu->nama_tbl;
             $link = $submenu->link;
 
-            if (!empty($tableName) && Schema::hasTable($tableName)) {
-                $columns = Schema::getColumnListing($tableName);
+            // Tentukan koneksi database jika tabel berasal dari database eksternal
+            $connection = null;
+            if (str_starts_with($tableName, 'mac_')) {
+                $connection = 'mac';
+            }
+
+            // Gunakan koneksi yang sesuai jika ada, jika tidak gunakan koneksi default
+            $schemaConnection = $connection ? Schema::connection($connection) : Schema::getFacadeRoot();
+
+            if (!empty($tableName) && $schemaConnection->hasTable($tableName)) {
+                $columns = $schemaConnection->getColumnListing($tableName);
                 $where = [];
 
                 if (in_array('app4_name', $columns) && in_array('app4_status', $columns)) {
@@ -65,9 +75,9 @@ class NotificationService
                 }
 
                 if (!empty($where)) {
-                    $total = DB::table($tableName)
-                        ->whereRaw(implode(' OR ', $where))
-                        ->count();
+                    // Gunakan koneksi yang tepat untuk query data
+                    $query = $connection ? DB::connection($connection)->table($tableName) : DB::table($tableName);
+                    $total = $query->whereRaw(implode(' OR ', $where))->count();
                     $tbl[$link] = $total;
                 } else {
                     $tbl[$link] = 0;
@@ -187,4 +197,6 @@ class NotificationService
 
         return $result;
     }
+
+    
 }
