@@ -13,12 +13,14 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Enums\RecordActionsPosition;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Auth;
 
 class PuDeklarasisTable
 {   
     protected static ?string $model = PuDeklarasi::class;
     public static function configure(Table $table): Table
     {
+        $user = Auth::user();
         return $table
             ->columns([
                 TextColumn::make('kode_deklarasi')
@@ -26,9 +28,9 @@ class PuDeklarasisTable
                 TextColumn::make('tgl_deklarasi')
                     ->date()
                     ->sortable(),
-                TextColumn::make('id_pengaju')
+                TextColumn::make('user.fullname')
                     ->numeric()
-                    ->sortable(),
+                    ->label('Pengaju'),
                 TextColumn::make('nama_dibayar')
                     ->searchable(),
                 TextColumn::make('sebesar')

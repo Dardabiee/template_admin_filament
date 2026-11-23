@@ -24,9 +24,9 @@ class BmnDeklarasisTable
                 TextColumn::make('tgl_deklarasi')
                     ->date()
                     ->sortable(),
-                TextColumn::make('id_pengaju')
+                TextColumn::make('user.fullname')
                     ->numeric()
-                    ->sortable(),
+                    ->label('Pengaju'),
                 TextColumn::make('nama_dibayar')
                     ->searchable(),
                 TextColumn::make('tujuan')

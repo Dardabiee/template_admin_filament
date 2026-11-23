@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class HmReimbustDetail extends Model
 {
-    //protected $connection = 'hm';
+    protected $connection = 'hm';
     protected $table = 'hm_reimbust_detail';
     protected $primaryKey = 'id';
     public $timestamps = false;

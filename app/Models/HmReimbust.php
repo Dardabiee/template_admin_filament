@@ -9,8 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class HmReimbust extends Model
 {
-    //protected $connection = 'hm';
-
+    protected $connection = 'hm';
     protected $table = 'hm_reimbust';
     protected $primaryKey = 'id';
     public $timestamps = true;

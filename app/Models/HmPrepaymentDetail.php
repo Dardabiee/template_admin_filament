@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class HmPrepaymentDetail extends Model
 {
-    //protected $connection = 'hm';
+    protected $connection = 'hm';
 
 
     protected $table = 'hm_prepayment_detail';
