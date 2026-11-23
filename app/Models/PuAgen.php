@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PuAgen extends Model
 {   
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
 
 

@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PuTravel extends Model
 {   
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
 
 

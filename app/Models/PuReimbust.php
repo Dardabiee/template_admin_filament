@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class PuReimbust extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
 
 

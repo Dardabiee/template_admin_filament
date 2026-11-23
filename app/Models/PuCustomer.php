@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class PuCustomer extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
 
 

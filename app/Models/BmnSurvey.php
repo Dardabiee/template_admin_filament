@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class BmnSurvey extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
 
 

@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PuSk extends Model
 {
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
 
 

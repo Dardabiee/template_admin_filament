@@ -9,7 +9,8 @@ use Carbon\Carbon;
 
 class PuNotifikasi extends Model
 {   
-    protected $connection = 'sw';
+    //protected $connection = 'sw';
+
 
 
 
