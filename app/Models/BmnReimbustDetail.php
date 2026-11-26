@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class BmnReimbustDetail extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 

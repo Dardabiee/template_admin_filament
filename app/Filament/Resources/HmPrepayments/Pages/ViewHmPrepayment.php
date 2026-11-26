@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\HmPrepayments\Pages;
 
 use App\Filament\Resources\HmPrepayments\HmPrepaymentResource;
+use Carbon\Carbon;
 use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\DatePicker;
@@ -65,7 +66,7 @@ class ViewHmPrepayment extends ViewRecord
                                 $record->update([
                                     'app_status' => 'approved',
                                     'app_name'   => Auth::user()->name,
-                                    'app_date'   => now(),
+                                    'app_date'   => Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s'),
                                     'status'     => 'on-process',
                                 ]);
                                 Notification::make()->title('Berhasil di-approve oleh Finance')->success()->send();
@@ -74,7 +75,7 @@ class ViewHmPrepayment extends ViewRecord
                                     'app_status' => 'rejected',
                                     'status'     => 'rejected',
                                     'app_name'   => Auth::user()->name,
-                                    'app_date'   => now(),
+                                    'app_date'   => Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s'),
                                     'app_keterangan' => $data['app_keterangan'] ?? null,
                                 ]);
                                 Notification::make()->title('Prepayment ditolak')->danger()->send();
@@ -83,7 +84,7 @@ class ViewHmPrepayment extends ViewRecord
                                     'app_status' => 'revised',
                                     'status'     => 'revised',
                                     'app_name'   => Auth::user()->name,
-                                    'app_date'   => now(),
+                                    'app_date'   => Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s'),
                                     'app_keterangan' => $data['app_keterangan'] ?? null,
                                 ]);
                                 Notification::make()->title('Prepayment direvisi')->warning()->send();

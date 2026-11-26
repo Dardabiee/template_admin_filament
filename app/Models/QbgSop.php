@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class QbgSop extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 

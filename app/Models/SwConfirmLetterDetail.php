@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class SwConfirmLetterDetail extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 

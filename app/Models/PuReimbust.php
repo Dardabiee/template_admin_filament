@@ -9,14 +9,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class PuReimbust extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 
 
     protected $table = 'pu_reimbust';
     protected $primaryKey = 'id';
-
+    public $timestamps = false;
     public $guarded = [];
 
     public function user(): BelongsTo {

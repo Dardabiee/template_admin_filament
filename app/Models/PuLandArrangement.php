@@ -8,7 +8,7 @@ use Carbon\Carbon;
 
 class PuLandArrangement extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 

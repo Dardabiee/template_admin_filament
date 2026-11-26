@@ -9,36 +9,7 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote');
 
 
-Schedule::command('notify:mac-reimbust')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:mac-prepayment')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:mac-deklarasi')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:hm-reimbuist')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:hm-prepayment')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:hm-deklarasi')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:pu-deklarasi')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:pu-reimbust')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:pu-prepayment')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:qbg-deklarasi')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:qbg-reimbust')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:qbg-prepayment')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:bmn-deklarasi')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:bmn-reimbust')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:bmn-prepayment')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:ctz-deklarasi')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:ctz-reimbust')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:ctz-prepayment')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:kps-deklarasi')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:kps-reimbust')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:kps-prepayment')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:sw-deklarasi')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:sw-reimbust')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:sw-prepayment')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:swi-deklarasi')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:swi-reimbust')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:swi-prepayment')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:sml-deklarasi')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:sml-reimbust')->everyMinute()->withoutOverlapping();
-Schedule::command('notify:sml-prepayment')->everyMinute()->withoutOverlapping();
+// Scheduler notifikasi dihapus karena notifikasi dibaca real-time saat halaman direfresh.
 
 
 

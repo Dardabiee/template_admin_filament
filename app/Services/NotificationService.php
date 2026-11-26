@@ -57,8 +57,9 @@ class NotificationService
                 }
 
                 if (in_array('app_name', $columns) && in_array('app_status', $columns)) {
-                    if (in_array('app4_status', $columns) && in_array('app4_name', $columns)) {
-                        $where[] = "(LOWER(app_name) = " . DB::getPdo()->quote(strtolower($name)) . " AND app_status = 'waiting' AND (app4_name IS NULL OR app4_name = '' OR app4_status = 'approved'))";
+                    // Jika user adalah Finance, tampilkan semua yang statusnya waiting
+                    if (auth()->user()->hasRole('Finance') || auth()->user()->hasRole('Super Admin')) {
+                        $where[] = "(app_status = 'waiting')";
                     } else {
                         $where[] = "(LOWER(app_name) = " . DB::getPdo()->quote(strtolower($name)) . " AND app_status = 'waiting')";
                     }

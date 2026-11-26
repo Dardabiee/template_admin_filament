@@ -138,16 +138,49 @@ class SwReimbustsTable
                 Action::make('bukti_bayar')
                     ->icon('heroicon-o-document')
                     ->iconButton()
-                    // ->label('Bukti Bayar')
                     ->color('success')
+                    ->tooltip('Lihat Bukti Pembayaran')
                     ->visible(fn ($record) => $record->payment_status === 'paid' && !empty($record->attachment))
-                    // Membuka file attachment di tab baru browser
                     ->modalHeading('Bukti Pembayaran')
-                    ->modalContent(fn ($record) => new HtmlString(
-                        '<img src="' . e(asset('/assets/documents/reimbust/swi/' . $record->attachment)) . '" alt="Bukti pembayaran" style="display:block; max-width:100%; max-height:80vh; height:auto; margin:0 auto;">'
-                    ))
                     ->modalSubmitAction(false)
-                    ->modalCancelActionLabel('Tutup'),
+                    ->modalCancelActionLabel('Tutup')
+                    ->modalContent(function ($record) {
+                        // Sesuaikan cara mendapatkan kode tenant dari $record (misal: $record->tenant_code atau 'kps')
+                        $tenant = $record->tenant_code ?? 'kps'; 
+
+                        $url = URL::temporarySignedRoute(
+                            'holding.document.show',
+                            now()->addMinutes(30),
+                            [
+                                'tenant' => $tenant,
+                                'module' => 'reimbust',
+                                'type'   => 'attachment',
+                                'id'     => $record->id,
+                            ]
+                        );
+
+                        $isPdf = str_ends_with(strtolower($record->attachment), '.pdf');
+
+                        if ($isPdf) {
+                            return new HtmlString(
+                                '<div class="space-y-2">' .
+                                    '<iframe src="' . e($url) . '" class="w-full rounded border" style="height: 75vh;"></iframe>' .
+                                    '<div class="text-right">' .
+                                        '<a href="' . e($url . '&download=1') . '" class="text-sm text-primary-600 hover:underline">Unduh PDF</a>' .
+                                    '</div>' .
+                                '</div>'
+                            );
+                        }
+
+                        return new HtmlString(
+                            '<div class="space-y-2 text-center">' .
+                                '<img src="' . e($url) . '" alt="Bukti pembayaran" style="display:block; max-width:100%; max-height:75vh; height:auto; margin:0 auto;" class="rounded">' .
+                                '<div class="text-right">' .
+                                    '<a href="' . e($url . '&download=1') . '" class="text-sm text-primary-600 hover:underline">Unduh Gambar</a>' .
+                                '</div>' .
+                            '</div>'
+                        );
+                    }),
             ], position: RecordActionsPosition::BeforeColumns);
     }
 }

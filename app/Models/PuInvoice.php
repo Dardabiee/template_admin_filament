@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class PuInvoice extends Model
 {   
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 

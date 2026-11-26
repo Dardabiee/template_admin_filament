@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SwSk extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 

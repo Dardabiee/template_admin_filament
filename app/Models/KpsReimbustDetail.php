@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class KpsReimbustDetail extends Model
 {
     //
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 

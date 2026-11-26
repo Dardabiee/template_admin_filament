@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Pages\Auth\Login;
 use App\Filament\Pages\CustomDashboard;
+use App\Http\Middleware\SyncApprovalNotification;
 use App\Models\Menu;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Actions\Action;
@@ -50,7 +51,7 @@ class AdminPanelProvider extends PanelProvider
                 fn () => Blade::render('<livewire:change-password-modal />'),
             )
             ->databaseNotifications()
-            ->databaseNotificationsPolling('30s')
+            ->databaseNotificationsPolling(null)
             // Aktifkan baris ini jika ingin menggunakan menu dari database:
             ->navigationItems(self::getDynamicNavigationItems())
             ->login(Login::class)
@@ -125,6 +126,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+                SyncApprovalNotification::class, 
             ]);
     }
 

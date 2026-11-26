@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SwiSop extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 

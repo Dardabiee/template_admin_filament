@@ -19,7 +19,7 @@ class MacReimbust extends Model
     protected $guarded = [];
 
     public function user(): BelongsTo {
-        return $this->belongsTo(SwUser::class, 'id_user', 'id_user');
+        return $this->belongsTo(MacUser::class, 'id_user', 'id_user');
     }
 
     public function detail(): HasMany {

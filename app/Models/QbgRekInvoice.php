@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class QbgRekInvoice extends Model
 {   
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 

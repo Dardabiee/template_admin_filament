@@ -54,7 +54,11 @@
                     <td class="text-center border border-gray-300 dark:border-gray-700 p-2">{{ number_format($detail->jumlah, 0, ',', '.') }}</td>
                     <td class="border border-gray-300 dark:border-gray-700 p-2 text-center">
                         @if($detail->kwitansi)
-                            <a href="{{ asset('/assets/img/documents/reimbust/pu/' . $detail->kwitansi) }}" target="_blank" class="px-3 py-1 bg-blue-600 text-white rounded text-xs">Lihat Foto</a>
+                            <button type="button" 
+                                onclick="openKwitansiModal('{{ asset('http://192.168.90.218/sw/assets/backend/document/reimbust/kwitansi/kwitansi_pu/' . $detail->kwitansi) }}')"
+                                class="px-3 py-1 bg-blue-600 text-white rounded text-xs hover:bg-blue-700 transition">
+                                Lihat Foto
+                            </button>
                         @else
                             -
                         @endif
@@ -104,4 +108,44 @@
         </table>
 
     </div>
+
+    <!-- MODAL PREVIEW KWITANSI -->
+    <div id="kwitansiModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white dark:bg-gray-900 rounded-xl max-w-2xl w-full p-6 relative shadow-xl border border-gray-200 dark:border-gray-800">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white">Preview Kwitansi</h3>
+                <button type="button" onclick="closeKwitansiModal()" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-xl font-bold">&times;</button>
+            </div>
+            <div class="flex justify-center items-center overflow-auto max-h-[75vh]">
+                <img id="kwitansiImageModal" src="" alt="Kwitansi Preview" class="max-w-full h-auto rounded object-contain">
+            </div>
+            <div class="mt-4 flex justify-end">
+                <button type="button" onclick="closeKwitansiModal()" class="px-4 py-2 bg-gray-500 text-white rounded text-sm hover:bg-gray-600">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openKwitansiModal(url) {
+            const modal = document.getElementById('kwitansiModal');
+            const img = document.getElementById('kwitansiImageModal');
+            img.src = url;
+            modal.classList.remove('hidden');
+        }
+
+        function closeKwitansiModal() {
+            const modal = document.getElementById('kwitansiModal');
+            const img = document.getElementById('kwitansiImageModal');
+            modal.classList.add('hidden');
+            img.src = '';
+        }
+
+        // Tutup modal ketika klik di luar kotak modal
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('kwitansiModal');
+            if (event.target === modal) {
+                closeKwitansiModal();
+            }
+        });
+    </script>
 </x-filament-panels::page>

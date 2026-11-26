@@ -11,7 +11,7 @@ class SwUser extends Model
 {
     use HasFactory, Notifiable, HasRoles;
     
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 

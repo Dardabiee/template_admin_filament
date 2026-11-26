@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class QbgInvoice extends Model
 {
-    //protected $connection = 'sw';
+    protected $connection = 'sw';
 
 
 
